@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4d85fe;">
+            <a class="navbar-brand" href="#">Site de Gelo <img src="./img/pinguin1.png" alt="" width="30"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+                aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav mr-auto" id="search">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">INÍCIO<span class="sr-only">(página atual)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">PRODUTOS</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">FALE CONOSCO</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">SOBRE NÓS</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">LOGIN</a>
+                    </li>
+                </ul>
+
+                <a class="navbar-brand" href="#">
+                    <img src="./img/carrinho-de-compras.png" width="30" height="30" alt="">
+                </a>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" id="pesquisar" type="search" placeholder="Pesquisar"
+                        aria-label="Pesquisar">
+                    <button class="btn btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Comeco do Login -->
+    <main>
+        <div class="container-login">
+            <div class="content-login primeiro-content">
+                <div class="primeira-coluna">
+                    <h2 class="title-login title-primario">Bem vindo de volta</h2>
+
+                    <button id="signin" class="btn2 btn-primario">Logar</button>
+                </div>
+                <div class="segunda-coluna">
+                    <h2 class="title-login title-segundario">Criar Conta</h2>
+                    <p class="descricao descricao-secundaria">Prencha seus dados para cadastrar</p>
+                    <form name="formlogin" class="form">
+                        <label class="label-input">
+                            <i class="fas fa-user icone-modify"></i>
+                            <input id="nome" type="text" name="nome" placeholder="Nome Completo" required>
+                        </label>
+
+                        <label class="label-input">
+                            <i class="fas fa-user icone-modify"></i>
+                            <input id="cpf" type="text" name="cpf" placeholder="CPF" required>
+                        </label>
+
+                        <label class="label-input">
+                            <i class="fas fa-calendar icone-modify"></i>
+                            <input id="dtaNascimento" type="text" name="dtaNascimento" placeholder="Data de Nascimento"
+                                required>
+                        </label>
+
+                        <label class="label-input">
+                            <i class="far fa-envelope icone-modify"></i>
+                            <input class="email" type="email" name="email" placeholder="Email" required>
+                        </label>
+                        <button class="btn2 btn-secundario">Cadastrar</button>
+                    </form>
+                </div> <!--  segunda coluna -->
+            </div> <!--  primeiro content -->
+            <div class="content-login segundo-content">
+                <div class="primeira-coluna">
+                    <h2 class="title-login title-primario">Bem-vindo</h2>
+                    <p class="descricao descricao-primaria">Clique abaixo para se cadastrar</p>
+                    <button id="signup" class="btn2 btn-primario">Cadastrar</button>
+                </div>
+                <div class="segunda-coluna">
+                    <h2 class="title-login title-segundario">Bem Vindo de volta</h2>
+                    <p class="descricao">Utilize sua conta</p>
+                    <form class="form">
+
+                        <label class="label-input">
+                            <i class="far fa-envelope icone-modify"></i>
+                            <input class="email" type="email" placeholder="Email" required>
+                        </label>
+
+                        <label class="label-input">
+                            <i class="fas fa-lock icone-modify"></i>
+                            <input class="senha" type="password" placeholder="Senha" required>
+                        </label>
+
+                        <a class="password" href="#">Esqueceu sua senha?</a>
+
+                        <button class="btn2 btn-secundario">Logar</button>
+                    </form>
+                </div> <!--  segunda coluna -->
+            </div> <!--  segundo content -->
+        </div>
+    </main>
+
+    <!-- //aqui termina o miolo do pão// -->
+
+    <footer>
+        <nav class="navbar navbar-dark" style="background-color: #4d85fe;">
+            <a class="navbar-brand" id="nome-site-footer">Site de Gelo
+
+                <img src="img/copyright-logo-png-5.png" width="15" alt=""></a>
+            <ul id="redes-sociais">
+
+                <a href="http://www.instagram.com/"><img src="./img/instagram-footer.png"
+                        alt="Instagram do Site de Gelo" width="30"></a>
+                <a href="http://www.facebook.com/"><img src="./img/facebook-footer.png" alt="Facebook do Site de Gelo"
+                        width="30"></a>
+                <a href="http://twitter.com/"><img src="./img/twitter-footer.png" alt="Twitter do Site de Gelo"
+                        width="30"></a>
+                <a href="http://www.youtube.com/"><img src="./img/youtube-footer.png" alt="Youtube do Site de Gelo"
+                        width="30"></a>
+
+            </ul>
+
+        </nav>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="js/login.js">
+    </script>
+</body>
+
+</html>
