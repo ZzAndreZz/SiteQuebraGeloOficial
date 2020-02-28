@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/carrinho.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <title>Checkout</title>
+</head>
+
+<body>
+<header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4d85fe;">
+            <a class="navbar-brand" href="#">Site de Gelo <img src="./img/pinguin1.png" alt="" width="30"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+                aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav mr-auto" id="search">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">INÍCIO<span class="sr-only">(página atual)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">PRODUTOS</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">FALE CONOSCO</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">SOBRE NÓS</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">LOGIN</a>
+                    </li>
+                </ul>
+
+                <a class="navbar-brand" href="#">
+                    <img src="./img/carrinho-de-compras.png" width="30" height="30" alt="">
+                </a>
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" id="pesquisar" type="search" placeholder="Pesquisar"
+                        aria-label="Pesquisar">
+                    <button class="btn btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="p-3"></div>
+    <main class=container>
+        <form id="checkout" class="col-md-12 row">
+            <div class="col-md-6">
+                <header class="bg-primary text-light p-2 border solid"><img src="./img/truck.png" width="50" height="50" alt=""> <strong>Entrega </strong>
+                </header>
+                <div class="form-group">
+                        <div class="p-2"></div>
+                    <label for="cepUsuario">CEP</label>
+                    <input class="form-control" type="text" id="cepUsuario" name="cepUsuario"
+                        placeholder="Digite o seu numero do CEP" required>
+                </div>
+                <div class="form-group">
+                    <label for="enderecoUsuario">Endereço</label>
+                    <input class="form-control" type="text" id="enderecoUsuario" name="enderecoUsuario"
+                        placeholder="Digite o seu endereço" required>
+                    <div class="form-group">
+                        <label for="numeroEnderecoUsuario">Numero</label>
+                        <input class="form-control" type="text" id="numeroEnderecoUsuario" name="numeroEnderecoUsuario"
+                            placeholder="Digite o seu numero" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="complementoUsuario">Complemento</label>
+                        <input class="form-control" type="text" id="complementoUsuario" name="complementoUsuario"
+                            placeholder="Digite o seu complemento">
+                    </div>
+                    <div class="form-group">
+                        <label for="bairroUsuario">Bairro</label>
+                        <input class="form-control" type="text" id="bairroUsuario" name="bairroUsuario"
+                            placeholder="Digite o seu bairro" required>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="cidadeUsuario">Cidade</label>
+                            <input class="form-control" type="text" id="cidadeUsuario" name="cidadeUsuario"
+                                placeholder="Digite o seu cidade" required>
+                        </div>
+                        <!-- <div class="form-group row"> -->
+                        <div class="col-6">
+                            <label for="estadoUsuario">Estado</label>
+                            <select class="form-control" name="estados-brasil" required>
+                                <option value="" disable selected>Estado</option>"
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <!-- <div class="col-6"> -->
+                    <div class="form-check">
+                        <label for="exampleRadios1">
+                            Frete especial <br> R$100,00
+                        </label>
+                        <!-- <div class="col-6"> -->
+                        <input type="radio" name="formasEnvio" id="freteRapido">
+                        <label for="exampleRadios2">
+                            Frete normal <br> R$30,00
+                        </label>
+                        <input type="radio" name="formasEnvio" id="freteNormal">
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <header class="bg-primary text-light p-2 border solid"><img src="./img/cartao-de-credito.png" width="50" height="50"
+                        alt=""> <strong> Pagamento </strong>
+                </header>
+                <div class="p-2"></div>
+                    <label>Resumo da Compra</label>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body"> <img src="images/gelo.jpg" width="65" height="65"> <br>
+                                Produto: <br>
+                                Quantidade:<br> 
+                            </div>
+                        </div>
+                </div>
+                <div class="p-3">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                Frete:<br>
+                                Total: <span id="totalValor"> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="numeroCartao">Numero do cartão</label>
+                    <input class="form-control" type="number" id="numeroCartao" name="numeroCartao"
+                        placeholder="Digite o numero do cartão" maxlength="16" required>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8">
+                        <label for="DtaValCartao">Data de validade</label>
+                        <input class="form-control" type="month" id="DtaValCartao" name="DtaValCartao"
+                            placeholder="Data de validade" required>
+                    </div>
+                    <!-- <div class="form-group"> -->
+                    <div class="col-4">
+                        <label for="segurCartao">CVV</label>
+                        <input class="form-control" type="number" id="segurCartao" name="segurCartao"
+                            placeholder="Digite o código de segurança" maxlength="3" required>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="nomeCartao">Nome do Titular</label>
+                    <input class="form-control" type="text" id="nomeCartao" name="nomeCartao"
+                        placeholder="Digite o nome do titular" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpfTituCartao">CPF do Titular</label>
+                    <input class="form-control" type="number" id="cpfTituCartao" name="cpfTituCartao"
+                        placeholder="Digite o CPF do titular" maxlength="11" required>
+                </div>
+                <div class="d-flex justify-content-end"> <button class="btn btn-primary btn-lg" type ="button" data-toggle="modal" data-target="#compraFinalizada" >Finalize sua compra</button> </div>
+            <div class="p-2"></div>    
+            </div>
+            </div>
+        </form>
+    </main>
+    <div id="compraFinalizada" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Compra realizada com sucesso!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Uhuuuu, parabéns pela sua compra!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#compraFinalizada" type="button">Fechado!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+       <footer>
+            <nav class="navbar navbar-dark" style="background-color: #4d85fe;">
+                <a class="navbar-brand" id="nome-site-footer">Site de Gelo
+
+                    <img src="img/copyright-logo-png-5.png" width="15" alt=""></a>
+
+                <ul id="redes-sociais">
+
+                    <a href="http://www.instagram.com/"><img src="./img/instagram-footer.png"
+                            alt="Instagram do Site de Gelo" width="30"></a>
+                    <a href="http://www.facebook.com/"><img src="./img/facebook-footer.png"
+                            alt="Facebook do Site de Gelo" width="30"></a>
+                    <a href="http://twitter.com/"><img src="./img/twitter-footer.png" alt="Twitter do Site de Gelo"
+                            width="30"></a>
+                    <a href="http://www.youtube.com/"><img src="./img/youtube-footer.png" alt="Youtube do Site de Gelo"
+                            width="30"></a>
+
+                </ul>
+
+            </nav>
+
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./js/checkout.js"></script>
+</body>
+
+</html>
