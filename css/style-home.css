@@ -26,3 +26,8 @@
         font-size: small;
         color: black;
     }
+    footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    }
