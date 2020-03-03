@@ -14,6 +14,8 @@
 
 <body>
 
+    <!-- logo do site -->
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #4d85fe;">
         <a class="navbar-brand" href="#"><img src="./img/LOGO3.png" alt="" width="100"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
@@ -21,53 +23,69 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Menu do site -->
+
         <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
             <ul class="navbar-nav mr-auto" id="search">
                 <li class="nav-item active">
-                    <a class="nav-link" href="home.html">INÍCIO<span class="sr-only">(página atual)</span></a>
+                    <a class="nav-link p-4" href="home.html">INÍCIO<span class="sr-only">(página atual)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="produtos.html">PRODUTOS</a>
+                    <a class="nav-link p-4" href="produtos.html">PRODUTOS</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#redes-sociais">FALE CONOSCO</a>
+                    <a class="nav-link p-4" href="#redes-sociais">FALE CONOSCO</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="sobre-nos.html">SOBRE NÓS</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="login.html">LOGIN</a>
+                    <a class="nav-link p-4" href="sobre-nos.html">SOBRE NÓS</a>
                 </li>
             </ul>
 
 
+            <!-- Espaço de pesquisa -->
 
-            <form class="form-inline my-2 my-lg-0">
+            <form id="barra-de-pesquisa" class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" id="pesquisar" type="search" placeholder="Pesquisar"
                     aria-label="Pesquisar">
                 <button class="btn btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
             </form>
 
+
+
+            <!-- Login do site -->
+
+            <a class="navbar-brand ml-3" href="login.html">
+                <img src="./img/login.png" width="30" height="30" alt="">
+            </a>
+
+            <!-- Carrinho de compras -->
+
             <a class="navbar-brand ml-3" href="#">
                 <img src="./img/carrinho-de-compras.png" width="30" height="30" alt="">
             </a>
+
         </div>
+
     </nav>
 
 
-    <!-- //aqui inicia o miolo do pão// -->
+    <!-- //AQUI INICIA O MIOLO DO PÃO// -->
+
+    <!-- Carousel do site -->]
 
     <main>
         <div data-interval="2000" id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="../SiteQuebraGeloOficial/img/cubosdegelo-carousel.jpg" alt="cubos de gelo">
+                    <img class="d-block w-100" src="../SiteQuebraGeloOficial/img/cubosdegelo-carousel.jpg"
+                        alt="cubos de gelo">
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="../SiteQuebraGeloOficial/img/promo-1.PNG" alt="promocao">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="../SiteQuebraGeloOficial/img/saco-de-gelo-1kg.png" alt="gelo de coco">
+                    <img class="d-block w-100" src="../SiteQuebraGeloOficial/img/saco-de-gelo-1kg.png"
+                        alt="gelo de coco">
                 </div>
             </div>
         </div>
@@ -135,13 +153,35 @@
     <br>
     <br>
 
-    <!-- //aqui termina o miolo do pão// -->
+    
+    <!-- //AQUI TERMINA O MIOLO DO PÃO// -->
+
+    <!-- Nosso nome com Copyright -->
 
     <footer>
-        <nav class="navbar navbar-dark" style="background-color: #4d85fe;">
-            <a class="navbar-brand" id="nome-site-footer">Site de Gelo
+        <div id="conteudoNavbarSuportado" style="background-color: #4d85fe;">
+            <a id="nome-site-footer"><img src="./img/LOGO3.png" width="100px" alt="logo do site"></a>
 
-                <img src="img/copyright-logo-png-5.png" width="15" alt=""></a>
+
+                <!-- Atendimento e bandeiras que usamos  -->
+
+                <div>
+                    <li class="nav-item active"><p class="nav-link">Nossa localização</p>
+                        <img src="./img/maps-site.png" class="mt-2" width="300px" alt="">
+                    </li>
+                    <li class="nav-item active">
+                        <p class="nav-link">*Atendimento: Segunda-Feira à Sexta-feira das 9h às 17h</p>
+                    </li>
+                    <li class="nav-item active">
+                        
+                    </li>
+                    <li class="nav-item active">
+                        
+                    </li>
+                </div>
+
+
+            <!-- Nossas redes sociais -->
 
             <ul id="redes-sociais">
 
@@ -156,7 +196,7 @@
 
             </ul>
 
-        </nav>
+        </div>
 
     </footer>
 
