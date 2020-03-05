@@ -1,0 +1,17 @@
+#search{
+justify-content: space-around;
+width: 775px;
+}
+#search a:hover{
+background-color: rgb(255, 255, 255);
+color:#4d85fe;
+}
+#conteudoNavbarSuportado{
+font-family: 'Raleway', 'Extra-Light';
+font-size: small;
+text-shadow: 4px 4px 4px #aaa;
+/* display: flex; */
+}
+#barra-de-pesquisa{
+display: contents;
+}
