@@ -1,0 +1,30 @@
+#search{
+    justify-content: space-around;
+    width: 775px;
+    }
+    #search a:hover{
+    background-color: rgb(255, 255, 255);
+    color:#4d85fe;
+    }
+    #conteudoNavbarSuportado{
+    font-family: 'Raleway', 'Extra-Light';
+    font-size: small;
+    text-shadow: 4px 4px 4px #aaa;
+    /* display: flex; */
+    }
+    #barra-de-pesquisa{
+    display: contents;
+    }
+    #atendimento-footer{
+        margin: 0px 0px 0px -117px;
+        }
+        .container-fluid{
+        font-family: 'Raleway', 'Extra-Light';
+        font-size: small;
+        text-shadow: 4px 4px 4px #aaa;
+        width: 100%;
+        }
+        .redes-sociais{
+            display: flex;
+            justify-content: space-around;
+        } 
