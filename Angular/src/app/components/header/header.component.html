@@ -1,40 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="search" style="background-color: #4d85fe;">
-    <a class="navbar-brand" href="#"> <img src="./img/LOGO3.png" alt="" width="100"></a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<!-- logo do site -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #4D85FE;">
+    <a class="navbar-brand" href="#"><img src="assets/LOGO3.png" alt="" width="100"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+        aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-
-    <div class="collapse navbar-collapse" >
-        
-        <ul class="navbar-nav mr-auto"  >
+    <!-- Menu do site -->
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto" id="search">
             <li class="nav-item active">
-                <a class="nav-link"  href="home.html" id="conteudoNavbarSuportado">INÍCIO<span class="sr-only">(página atual)</span></a>
+                <a class="nav-link p-4" routerLink="">INÍCIO<span class="sr-only">(página atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="produtos.html" id="conteudoNavbarSuportado">PRODUTOS</a>
+                <a class="nav-link p-4" routerLink="">PRODUTOS</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#redes-sociais" id="conteudoNavbarSuportado">SOBRE NÓS</a>
+                <a class="nav-link p-4" routerLink="">FALE CONOSCO</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#redes-sociais" id="conteudoNavbarSuportado">FALE CONOSCO</a>
-            </li>
-            <li class="nav-item active zoom">
-                <a class="nav-link" href="#" id="conteudoNavbarSuportado">LOGIN</a>
+                <a class="nav-link p-4" routerLink="/sobre-nos">SOBRE NÓS</a>
             </li>
         </ul>
-
-        
-
+        <!-- Espaço de pesquisa -->
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="pesquisar" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-            <button class="btn btn-light my-2 my-sm-0" type="submit">Pesquisar</button>
+            <input class="form-control mr-sm-2" id="pesquisar" type="search" placeholder="Pesquisar"
+                aria-label="Pesquisar">
+            <input type=image src="./assets/lupa.png" width="30" height="30">
         </form>
+        <!-- Login do site -->
         <a class="navbar-brand ml-3" href="#">
-            <img src="./img/carrinho-de-compras.png" width="30" height="30" alt="">
+            <img src="assets/login.png" width="30" height="30" alt="">
+        </a>
+        <!-- Carrinho de compras -->
+        <a class="navbar-brand ml-3">
+            <img src="/assets/carrinho-de-compras.png" width="30" height="30" alt="">
         </a>
     </div>
-    
 </nav>

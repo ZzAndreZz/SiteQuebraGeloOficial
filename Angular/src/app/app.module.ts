@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ReactiveFormsModule } from "@angular/forms";
+// import { ReactiveFormsModule } from "@angular/forms";
 
 
 
@@ -20,7 +20,7 @@ import { ReactiveFormsModule } from "@angular/forms";
   imports: [
 
     BrowserModule,
-    ReactiveFormsModule
+    // ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
