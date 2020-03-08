@@ -1,0 +1,127 @@
+<main class="container" id="container" >
+
+    <form id="checkout" class="row ml-4 p-5" [formGroup]="form">
+     
+  
+        <div class="col-md-6">
+             <header class="text-light p-2 margin-top:30" style="background-color: #6fb2ff;">
+                Dados Pessoais
+            </header>
+            <div class="p-2">
+                <div class="form-group">
+                    <label for="nomeUsuario">Nome Completo</label>
+                    <input class="form-control" type="text" id="nomeUsuario" name="nomeUsuario" placeholder="Digite seu nome completo" formControlName="name" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label for="cpfUsuario">CPF</label>
+                    <input class="form-control" type="number" id="cpfUsuario" name="cpfUsuario" maxlength="11" placeholder="Digite seu CPF" formControlName="cpf" maxlength="11">
+                </div>
+                <div class="form-group">
+                    <label for="telefoneUsuario">Telefone</label>
+                    <input class="form-control" type="tel" id="telefoneUsuario" name="telefoneUsuario" placeholder="Digite seu telefone" formControlName="tel" maxlength="11">
+                </div>
+                <div class="form-group">
+                    <label for="emailUsuario">Email</label>
+                    <input  class="form-control" type="email" id="emailUsuario" name="emailUsuario" placeholder="Digite seu email" formControlName="email" maxlength="30">
+                </div>
+                <div class="form-group">
+                    <label for="senhaUsuario">Senha</label>
+                    <input class="form-control" type="password" id="senhaUsuario" name="senhaUsuario" placeholder="Digite sua senha" formControlName="senha">
+                </div>
+                <div class="form-group">
+                    <label for="confirmarSenhaUsuario">Confirme a Senha</label>
+                    <input class="form-control" type="password" id="confirmarSenhaUsuario" name="confirmarSenhaUsuario" placeholder="Confirmar Senha" formControlName="senha">
+                </div>
+                
+            </div>
+        </div>
+  
+        <!-- DADOS DE ENTREAGA -->
+        <div class="col-md-6">
+            <header class="text-light p-2" style="background-color: #6fb2ff;">
+                Endereço
+            </header>
+            <div class="p-2">
+                <div class="form-group">
+                    <label for="cepUsuario">CEP</label>
+                    <input class="form-control" type="number" id="cepUsuario" name="cepUsuario" placeholder="Digite seu cep" formControlName="cep" maxlength="8">
+                </div>
+                <div class="form-group">
+                        <label for="enderecoUsuario">Endereço</label>
+                        <input class="form-control" type="text" id="enderecoUsuario" name="enderecoUsuario" placeholder="Digite seu endereço" formControlName="endereco" maxlength="60">
+                </div>
+                <div class="form-group">
+                        <label for="numeroUsuario">Numero</label>
+                        <input class="form-control" type="number" id="numeroUsuario" name="numeroUsuario" placeholder="Digite seu numero da residencia" maxlength="3">
+                </div>
+                <div class="form-group">
+                        <label for="complementoUsuario">Complemento</label>
+                        <input class="form-control" type="text" id="complementoUsuario" name="complementoUsuario" placeholder="Digite seu complemento" maxlength="40">
+                </div>
+                <div class="form-group">
+                        <label for="bairroUsuario">Bairro</label>
+                        <input class="form-control" type="text" id="bairroUsuario" name="bairroUsuario" placeholder="Digite seu bairro" maxlength="30">
+                </div>
+                <div class="form-group row">
+                    <div class="col-6">
+                            <label for="cidadeUsuario">Cidade</label>
+                            <input class="form-control" type="text" id="cidadeUsuario" name="cidadeUsuario" placeholder="Digite seu cidade" maxlength="40">
+                    </div>
+                    <div class="col-6">
+                            <label for="estadoUsuario">Estado</label>
+                            <select id="estadoUsuario" name="estadoUsuario" class="form-control">
+                                <option value="" disabled selected>Estado</option>
+                                <option value="AC">AC</option>
+                                  <option value="AL">AL</option>
+                                  <option value="AP">AP</option>
+                                  <option value="AM">AM</option>
+                                  <option value="BA">BA</option>
+                                  <option value="CE">CE</option>
+                                  <option value="DF">DF</option>
+                                  <option value="ES">ES</option>
+                                  <option value="GO">GO</option>
+                                  <option value="MA">MA</option>
+                                  <option value="MT">MT</option>
+                                  <option value="MS">MS</option>
+                                  <option value="MG">MG</option>
+                                  <option value="PA">PA</option>
+                                  <option value="PB">PB</option>
+                                  <option value="PR">PR</option>
+                                  <option value="PE">PE</option>
+                                  <option value="PI">PI</option>
+                                  <option value="RJ">RJ</option>
+                                  <option value="RN">RN</option>
+                                  <option value="RS">RS</option>
+                                  <option value="RO">RO</option>
+                                  <option value="RR">RR</option>
+                                  <option value="SC">SC</option>
+                                  <option value="SP">SP</option>
+                                  <option value="SE">SE</option>
+                            </select>
+                    </div>         
+                <!-- </div> -->
+  
+              
+  
+  
+            <div id="btnfinalizarcadastro"  class="d-flex justify-content-end">
+              <button (click)="onSubmit()" class="btn btn-success" type="button"  data-toggle="modal" data-target="#compraFinalizada" >Finalizar Cadastro</button>
+          </div>
+  
+         
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      </div>
+  
+  
+            
+                
+                
+            </div>
+        </div>
+       
+    </form>
+  </main>
