@@ -1,0 +1,44 @@
+.paginaDeProdutos{
+    margin-top: 100px;
+}
+
+a{
+    color: inherit;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.card:hover{
+    border: solid rgb(127, 126, 133);
+    box-shadow: rgb(127, 126, 133);
+}
+
+#preco{
+    font-size: 25px;
+}
+
+#qtdDeProduto{
+    width: 50px;
+    height: 70px;
+}
+
+#adcCarrinho{
+    width: 130px;
+    height: 100px;
+}
+
+#filtros{
+    height: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    #produtos{
+        width: 100vw;
+        justify-content: center;
+    }
+    .card {
+      margin: 10px 10px 0 0;
+    }
+  }
