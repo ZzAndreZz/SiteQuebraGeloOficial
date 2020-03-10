@@ -9,15 +9,15 @@
                 </header>
                 <div class="form-group">
                         <div class="p-2"></div>
-                    <label for="cepUsuario">CEP</label>
-                                        <input class="form-control" type="text" id="cepUsuario" formControlName="cep"
+                    <label for="cep">CEP</label>
+                                        <input class="form-control" type="text" id="cep" (blur)="pegarCpf()" formControlName="cep"
                         placeholder="Digite o seu numero do CEP"  maxlength="8" required>
 
 
    </div>
                 <div class="form-group">
-                    <label for="enderecoUsuario">Endereço</label>
-                    <input class="form-control" type="text" id="enderecoUsuario" formControlName="endereco"
+                    <label for="endereco">Endereço</label>
+                    <input class="form-control" type="text" id="endereco" formControlName="endereco"
                         placeholder="Digite o seu endereço" required>
                     <div class="form-group">
                         <label for="numeroEnderecoUsuario">Numero</label>
@@ -30,20 +30,20 @@
                             placeholder="Digite o seu complemento">
                     </div>
                     <div class="form-group">
-                        <label for="bairroUsuario">Bairro</label>
-                        <input class="form-control" type="text" id="bairroUsuario" formControlName="bairro"
+                        <label for="bairro">Bairro</label>
+                        <input class="form-control" type="text" id="bairro" formControlName="bairro"
                             placeholder="Digite o seu bairro" required>
                     </div>
                     <div class="form-group row">
                         <div class="col-6">
-                            <label for="cidadeUsuario">Cidade</label>
-                            <input class="form-control" type="text" id="cidadeUsuario" formControlName="cidade"
+                            <label for="cidade">Cidade</label>
+                            <input class="form-control" type="text" id="cidade" formControlName="cidade"
                                 placeholder="Digite o seu cidade" required>
                         </div>
                         <div class="col-6">
-                            <label for="estadoUsuario">Estado</label>
-                            <select class="form-control" formControlName="estado" required>
-                                <option value="" disable selected>Estado</option>"
+                            <label for="estado">Estado</label>
+                            <select class="form-control" formControlName="estado" id="estado" required>
+                                <option value="" selected>Estado</option>"
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
