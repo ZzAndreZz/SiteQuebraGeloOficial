@@ -23,10 +23,11 @@ float:left;
 background-color:transparent;
 padding-left:10px;
 font-style:italic;
-font-size:18px;
+font-size:16px;
 border:none;
 height:36px;
 width:200px;
+padding: 22px;
 }
 #btnBusca{
     background-color: transparent;
