@@ -1,0 +1,177 @@
+<div class="paginaCheckout">
+
+    <div class="p-3"></div>
+    <main class=container>
+        <form [formGroup]="formEntrega" (ngSubmit)="compraRealizada()">
+        <div class="col-md-12 row">
+            <div class="col-md-6">
+                <header class="bg-primary text-light p-2 border solid"><img src="./assets/truck.png" width="50" height="50" alt=""> <strong>  Entrega </strong>
+                </header>
+                <div class="form-group">
+                        <div class="p-2"></div>
+                    <label for="cepUsuario">CEP</label>
+                                        <input class="form-control" type="text" id="cepUsuario" formControlName="cep"
+                        placeholder="Digite o seu numero do CEP"  maxlength="8" required>
+
+
+   </div>
+                <div class="form-group">
+                    <label for="enderecoUsuario">Endereço</label>
+                    <input class="form-control" type="text" id="enderecoUsuario" formControlName="endereco"
+                        placeholder="Digite o seu endereço" required>
+                    <div class="form-group">
+                        <label for="numeroEnderecoUsuario">Numero</label>
+                        <input class="form-control" type="text" id="numeroEnderecoUsuario" formControlName="nroEndereco"
+                            placeholder="Digite o seu numero" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="complementoUsuario">Complemento</label>
+                        <input class="form-control" type="text" id="complementoUsuario" formControlName="complemento"
+                            placeholder="Digite o seu complemento">
+                    </div>
+                    <div class="form-group">
+                        <label for="bairroUsuario">Bairro</label>
+                        <input class="form-control" type="text" id="bairroUsuario" formControlName="bairro"
+                            placeholder="Digite o seu bairro" required>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="cidadeUsuario">Cidade</label>
+                            <input class="form-control" type="text" id="cidadeUsuario" formControlName="cidade"
+                                placeholder="Digite o seu cidade" required>
+                        </div>
+                        <div class="col-6">
+                            <label for="estadoUsuario">Estado</label>
+                            <select class="form-control" formControlName="estado" required>
+                                <option value="" disable selected>Estado</option>"
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <label for="exampleRadios1">
+                            Frete especial <br> R$100,00
+                        </label>
+                        <input type="radio" name="formasEnvio" id="freteRapido">
+                        <label for="exampleRadios2">
+                            Frete normal <br> R$30,00
+                        </label>
+                        <input type="radio" name="formasEnvio" id="freteNormal">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <header class="bg-primary text-light p-2 border solid"><img src="./assets/cartao-de-credito.png" width="50" height="50"
+                        alt="Pagamento"> <strong> Pagamento </strong>
+                </header>
+                <div class="p-2"></div>
+                    <label>Resumo da Compra</label>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body"> <img src="./assets/gelo.jpg" width="65" height="65"> <br>
+                                Produto: <br>
+                                Quantidade:<br> 
+                            </div>
+                        </div>
+                </div>
+                <div class="p-3">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                Frete:<br>
+                                Total: <span id="totalValor"> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="numeroCartao">Numero do cartão</label>
+                    <input class="form-control" type="text" id="numeroCartao" formControlName="nroCartao"
+                        placeholder="Digite o numero do cartão" maxlength="16" required>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8">
+                        <label for="DtaValCartao">Data de validade</label>
+                        <input class="form-control" type="month" id="DtaValCartao" formControlName="dtaValidade"
+                            placeholder="Data de validade" required>
+                    </div>
+                    <!-- <div class="form-group"> -->
+                    <div class="col-4">
+                        <label for="segurCartao">CVV</label>
+                        <input class="form-control" type="text" id="segurCartao" formControlName="CVV"
+                            placeholder="Digite o código" maxlength="3" required>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="nomeCartao">Nome do Titular</label>
+                    <input class="form-control" type="text" id="nomeCartao" formControlName="nomeTitular"
+                        placeholder="Digite o nome do titular" required>
+                </div>
+                <div class="form-group">
+                    <label for="cpfTituCartao">CPF do Titular</label>
+                    <input class="form-control" type="text"  formControlName="CPFtitular"  
+                        placeholder="Digite o CPF do titular" maxlength="11" ng-model="CPFtitular" required> 
+                            <div *ngIf="!cpf.pristine && cpf.errors">
+                                <p *ngIf="cpf.errors.required">
+                                    CPF é obrigatório.
+                                </p>
+                                <p *ngIf="cpf.errors.cpfInvalido">
+                                    Digite um CPF válido
+                                </p>
+                                </div>
+
+                </div>
+                <div class="d-flex justify-content-end"> 
+                <button class="btn btn-primary btn-lg" [disabled]="!formEntrega.valid" type ="button" data-toggle="modal" data-target="#compraFinalizada" >Finalize sua compra</button> </div>
+            <div class="p-2"></div>    
+            </div>
+                <div id="compraFinalizada" class="modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title">Compra realizada com sucesso!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                            <p>Uhuuuu, parabéns pela sua compra!</p>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#compraFinalizada" type="button">Fechado!</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div>{{ formEntrega.value | json}}</div>
+                    <div>{{ formEntrega.valid | json }}</div>

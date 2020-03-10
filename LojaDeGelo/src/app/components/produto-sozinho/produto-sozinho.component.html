@@ -1,0 +1,32 @@
+<main class="container">
+    <p class="text-muted"><a routerLink="">Home</a> > <a routerLink="">Produtos</a> > <a
+            routerLink="">Gelo Artifical Reutilizável</a></p>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-6">
+            <img src="assets/produto1.jpg" width="80%" alt="">
+        </div>
+        <div class="col-lg-4">
+            <h4>{{produtos[0].titulo}}</h4>
+            <p>Código: ????? Marca: ??????</p>
+            <hr>
+            <p>{{produtos[0].desc}}</p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>
+                        <s>de: {{produtos[0].precoCheio.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</s>
+                        <br>
+                        <b id="preco">por: {{produtos[0].precoDesconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</b>
+                        <br>
+                        ou {{produtos[0].precoBoleto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}} via Boleto Bancário
+                    </p>
+                </div>
+                <div class="col-lg-6 d-flex">
+                    <button id="adcCarrinho" type="button" class="btn btn-success align-self-center ml-2">Adicionar
+                        ao carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
