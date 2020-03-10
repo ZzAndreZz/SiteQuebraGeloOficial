@@ -15,7 +15,7 @@
                 </div>
                 <div class="form-group">
                     <label for="cpfUsuario">CPF</label>
-                    <input class="form-control" type="number" id="cpfUsuario" name="cpfUsuario" maxlength="11"
+                    <input class="form-control" type="tel" id="cpfUsuario" name="cpfUsuario" maxlength="11"
                         placeholder="Digite seu CPF" formControlName="cpf" maxlength="11">
                 </div>
                 <div class="form-group">
@@ -49,18 +49,18 @@
             </header>
             <div class="p-2">
                 <div class="form-group">
-                    <label for="cepUsuario">CEP</label>
-                    <input class="form-control" type="number" id="cepUsuario" name="cepUsuario"
-                        placeholder="Digite seu cep" formControlName="cep" maxlength="8">
+                    <label for="cep">CEP</label>
+                    <input class="form-control" type="tel" id="cep" name="cepUsuario"
+                        placeholder="Digite seu cep" (blur)="pegarCpf()" formControlName="cep" maxlength="8" required>
                 </div>
                 <div class="form-group">
                     <label for="enderecoUsuario">Endereço</label>
                     <input class="form-control" type="text" id="enderecoUsuario" name="enderecoUsuario"
-                        placeholder="Digite seu endereço" formControlName="endereco" maxlength="60">
+                        placeholder="Digite seu endereço" formControlName="endereco" maxlength="60" required>
                 </div>
                 <div class="form-group">
                     <label for="numeroUsuario">Numero</label>
-                    <input class="form-control" type="number" id="numeroUsuario" name="numeroUsuario"
+                    <input class="form-control" type="tel" id="numeroUsuario" name="numeroUsuario"
                         placeholder="Digite seu numero da residencia" maxlength="3">
                 </div>
                 <div class="form-group">
@@ -74,12 +74,12 @@
                         placeholder="Digite seu bairro" maxlength="30">
                 </div>
                 <div class="form-group row">
-                    <div class="col-6">
+                    <div class="col-8">
                         <label for="cidadeUsuario">Cidade</label>
                         <input class="form-control" type="text" id="cidadeUsuario" name="cidadeUsuario"
                             placeholder="Digite seu cidade" maxlength="40">
                     </div>
-                    <div class="col-6">
+                    <div class="col-4">
                         <label for="estadoUsuario">Estado</label>
                         <select id="estadoUsuario" name="estadoUsuario" class="form-control">
                             <option value="" disabled selected>Estado</option>

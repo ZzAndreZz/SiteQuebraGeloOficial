@@ -6,6 +6,10 @@ import {
   FormControl,
   ReactiveFormsModule
 } from '@angular/forms';
+import { Formulario } from 'src/app/model/formulario';
+import { CepService } from 'src/app/services/cep.service';
+import { Entrega } from 'src/app/model/Entrega';
+
 // import { ClientesService } from "./clientes.service";
 
 @Component({
@@ -16,63 +20,56 @@ import {
 export class FormularioComponent implements OnInit {
 
 
-  
-  // form: FormGroup;
-
-  // clientes: string[] = [];
-
-  // clienteService: ClientesService;
-
-  //  formCadastro;
-  constructor() {
-    // private formBuilder: FormBuilder
-    // this.clienteService = new ClientesService();
+  constructor(private cepService: CepService) {
+    this.formEntrega = this.createForm(new Entrega());
   }
 
-  ngOnInit() {
-    // this.form = this.formBuilder.group({
-    //   name: [null, Validators.required],
-    //   email: [null, [Validators.required, Validators.email]],
-    //   endereco: [null, [Validators.required]],
-    //   tel: [null, [Validators.call]],
-    //   cpf: [null, [Validators.call]],
+  formulario: Formulario = new Formulario("", "", "", "", "sp", "sp")
 
-    // });
+  formEntrega: FormGroup
+
+  private createForm(entrega: Entrega) {
+    return new FormGroup({
+      cod: new FormControl(entrega.codEntrega),
+      cep: new FormControl(entrega.CEPUsuario),
+      endereco: new FormControl(entrega.enderecoUsuario),
+      nroEndereco: new FormControl(entrega.numeroEndereco),
+      complemento: new FormControl(entrega.complementoEndereco),
+      bairro: new FormControl(entrega.bairro),
+      cidade: new FormControl(entrega.cidade),
+      estado: new FormControl(entrega.estado),
+      nroCartao: new FormControl(entrega.nroCartao),
+      dtaValidade: new FormControl(entrega.dtaValidade),
+      CVV: new FormControl(entrega.CVV),
+      nomeTitular: new FormControl(entrega.nomeTitular),
+      CPFtitular: new FormControl(entrega.CPFtitular)
+    })
   }
 
-  // isFieldValid(field: string) {
-  //   return !this.form.get(field).valid && this.form.get(field).touched;
-  // }
 
-  // displayFieldCss(field: string) {
-  //   return {
-  //     'has-error': this.isFieldValid(field),
-  //     'has-feedback': this.isFieldValid(field)
-  //   };
-  // }
+  pegarCpf() {
+    this.cepService.getCep(this.formEntrega.value).subscribe((data) => {
+      this.formulario.setEndereco(data.cep, data.logradouro, data.bairro, data.uf, data.localidade)
+      this.formEntrega.controls['endereco'].patchValue(this.formulario.endereco);
+      this.formEntrega.controls['bairro'].patchValue(this.formulario.bairro);
+      this.formEntrega.controls['estado'].patchValue(this.formulario.estado);
+      this.formEntrega.controls['cidade'].patchValue(this.formulario.cidade);
+    })
+  }
 
-  // onSubmit() {
-  //   console.log(this.form);
-  //   if (this.form.valid) {
-  //     console.log('form submitted');
-  //   } else {
-  //     this.validateAllFormFields(this.form);
-  //   }
-  // }
 
-  // validateAllFormFields(formGroup: FormGroup) {
-  //   Object.keys(formGroup.controls).forEach(field => {
-  //     console.log(field);
-  //     const control = formGroup.get(field);
-  //     if (control instanceof FormControl) {
-  //       control.markAsTouched({ onlySelf: true });
-  //     } else if (control instanceof FormGroup) {
-  //       this.validateAllFormFields(control);
-  //     }
-  //   });
-  // }
 
-  // reset(){
-  //   this.form.reset();
-  // }
+  compraRealizada() {
+    console.log(this.formEntrega.value)
+  }
+
+
+  get cpf() {
+    return this.formEntrega.get('CPFtitular');
+  }
+
+
+
+  ngOnInit(): void {
+  }
 }
