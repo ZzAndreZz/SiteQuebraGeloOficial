@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ecf0f1;
+}
+
+.content-login {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 960px;
+    height: 50%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.content-login::before{
+    content: "";
+    position: absolute;
+    background-color: #4d85fe;
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: 0%;
+}
+
+.title-login{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.title-primario{
+color: #fff ;
+}
+
+.title-segundario{
+    color: #4d85fe;
+}
+
+.descricao{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+}
+
+.descricao-secundaria{
+    color: #7f8c8d;
+}
+
+.btn2 {
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn-secundario {
+    background-color: #4d85fe ;
+    border: 1px solid #4d85fe;
+    transition: background-color .5s;
+}
+
+.btn-secundario:hover{
+    background-color: #fff;
+    border: 1px solid #4d85fe;
+    color: #4d85fe;
+}
+.primeiro-content{
+    display: flex;
+}
+
+.primeira-coluna{
+    text-align: center;
+    width: 40%;
+    z-index: 10;
+}
+
+.segunda-coluna{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+.form input{
+    height: 45px;
+    width: 100%;
+    border: none;
+    background-color: #ecf0f1;
+}
+
+.label-input{
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.icone-modify{
+    color: #7f8c8d;
+    padding: 0 5px ;
+}
+
+
+.password{
+    color:#34495e;
+    font-size: 14px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.password::first-letter{
+    text-transform: capitalize;
+}
