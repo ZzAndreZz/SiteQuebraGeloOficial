@@ -3,47 +3,45 @@
     <div class="p-3"></div>
     <main class=container>
         <form [formGroup]="formEntrega" (ngSubmit)="compraRealizada()">
-        <div class="col-md-12 row">
-            <div class="col-md-6">
-                <header class="bg-primary text-light p-2 border solid"><img src="./assets/truck.png" width="50" height="50" alt=""> <strong>  Entrega </strong>
+                <header class="tituloEntrega"> 
+                <strong>  ENTREGA </strong>
                 </header>
-                <div class="form-group">
-                        <div class="p-2"></div>
+                <div class="p-3"></div>
+               <div class="form-row">
+                 <div class="form-group col-md-3">
                     <label for="cep">CEP</label>
                                         <input class="form-control" type="text" id="cep" (blur)="pegarCpf()" formControlName="cep"
-                        placeholder="Digite o seu numero do CEP"  maxlength="8" required>
-
-
-   </div>
-                <div class="form-group">
+                        placeholder="Digite o CEP"  maxlength="8" required>
+                </div>
+            <div class="form-group col-md-6">
                     <label for="endereco">Endereço</label>
                     <input class="form-control" type="text" id="endereco" formControlName="endereco"
-                        placeholder="Digite o seu endereço" required>
-                    <div class="form-group">
+                        placeholder="Digite o endereço" required>
+                </div>
+                    <div class="form-group col-md-2">
                         <label for="numeroEnderecoUsuario">Numero</label>
                         <input class="form-control" type="text" id="numeroEnderecoUsuario" formControlName="nroEndereco"
-                            placeholder="Digite o seu numero" required>
-                    </div>
-                    <div class="form-group">
+                            placeholder="Digite o numero" required></div>
+
+                    <div class="form-group col-md-4">
                         <label for="complementoUsuario">Complemento</label>
                         <input class="form-control" type="text" id="complementoUsuario" formControlName="complemento"
-                            placeholder="Digite o seu complemento">
-                    </div>
-                    <div class="form-group">
+                            placeholder="Digite o complemento">
+                            </div>
+                    <div class="form-group col-md-3">
                         <label for="bairro">Bairro</label>
                         <input class="form-control" type="text" id="bairro" formControlName="bairro"
-                            placeholder="Digite o seu bairro" required>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-6">
+                            placeholder="Digite o bairro" required>
+                            </div>
+                    <div class="form-group col-md-2">
                             <label for="cidade">Cidade</label>
                             <input class="form-control" type="text" id="cidade" formControlName="cidade"
-                                placeholder="Digite o seu cidade" required>
+                                placeholder="Digite a cidade" required>
                         </div>
-                        <div class="col-6">
+                        <div class="form-group col-md-2">
                             <label for="estado">Estado</label>
                             <select class="form-control" formControlName="estado" id="estado" required>
-                                <option value="" selected>Estado</option>"
+                                <option value="" selected>Estado</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
@@ -74,69 +72,49 @@
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <label for="exampleRadios1">
-                            Frete especial <br> R$100,00
-                        </label>
-                        <input type="radio" name="formasEnvio" id="freteRapido">
-                        <label for="exampleRadios2">
-                            Frete normal <br> R$30,00
-                        </label>
-                        <input type="radio" name="formasEnvio" id="freteNormal">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <header class="bg-primary text-light p-2 border solid"><img src="./assets/cartao-de-credito.png" width="50" height="50"
-                        alt="Pagamento"> <strong> Pagamento </strong>
+
+        <div class="p-3"></div>
+                <header class="tituloPagamento">  PAGAMENTO 
                 </header>
                 <div class="p-2"></div>
-                    <label>Resumo da Compra</label>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body"> <img src="./assets/gelo.jpg" width="65" height="65"> <br>
-                                Produto: <br>
-                                Quantidade:<br> 
-                            </div>
-                        </div>
+                <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 15rem;">
+                    <img class="card-img-top" src="./assets/gelodecoco.png" alt="Gelo de coco">
+                    <div class="card-body">
+                        <h5 class="card-title">Produto</h5>
+                        <p class="card-text">Vendido e fornecido por: My Ice</p>
+                          </div>
+                          <ul class="list-group list-group-flush">
+                             <li class="list-group-item"> <span id="totalValor"> Total: </span> </li>
+                             </ul>
+                                 </div>
                 </div>
-                <div class="p-3">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                Frete:<br>
-                                Total: <span id="totalValor"> </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
+
+            <div class="col-md-7">
+            <div class="form-row">
+                <div class="form-group col-md-5">
                     <label for="numeroCartao">Numero do cartão</label>
                     <input class="form-control" type="text" id="numeroCartao" formControlName="nroCartao"
-                        placeholder="Digite o numero do cartão" maxlength="16" required>
+                        placeholder="Numero do cartão" maxlength="16" required>
                 </div>
-                <div class="form-group row">
-                    <div class="col-8">
+                <div class="form-group col-md-3">
                         <label for="DtaValCartao">Data de validade</label>
                         <input class="form-control" type="month" id="DtaValCartao" formControlName="dtaValidade"
                             placeholder="Data de validade" required>
                     </div>
-                    <!-- <div class="form-group"> -->
-                    <div class="col-4">
+                    <div class="form-group col-md-2"> 
                         <label for="segurCartao">CVV</label>
                         <input class="form-control" type="text" id="segurCartao" formControlName="CVV"
-                            placeholder="Digite o código" maxlength="3" required>
+                            placeholder="CVV" maxlength="3" required>
                     </div>
 
-                </div>
-                <div class="form-group">
+                <div class="form-group  col-md-5">
                     <label for="nomeCartao">Nome do Titular</label>
                     <input class="form-control" type="text" id="nomeCartao" formControlName="nomeTitular"
-                        placeholder="Digite o nome do titular" required>
+                        placeholder="Nome do titular" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group  col-md-5">
                     <label for="cpfTituCartao">CPF do Titular</label>
                     <input class="form-control" type="text"  formControlName="CPFtitular"  
                         placeholder="Digite o CPF do titular" maxlength="11" ng-model="CPFtitular" required> 
@@ -148,23 +126,43 @@
                                     Digite um CPF válido
                                 </p>
                                 </div>
-
+                            </div>
                 </div>
+
+                <div class="card text-center col-md-9">
+  <h5 class="card-header">  <strong>Frete</strong>  </h5>
+          <div class="card align-content-center">
+                <div class="form-group">
+                        <div class="d-flex justify-content-around">
+                    <div class="form-check">
+                        <label for="exampleRadios1"> 
+                            <div class="p-2"> </div>
+                        <input type="radio" name="formasEnvio" id="freteRapido">
+                            Frete rápido <br> 2 dias úteis <br> R$100,00 
+                        </label>
+                        <label for="exampleRadios2">
+                         <input type="radio" name="formasEnvio" id="freteNormal">
+                            Frete normal <br> Até 7 dias úteis <br> R$30,00 
+                        </label>
+                    </div></div>
+                </div>
+            </div>
+</div>
+<div class="p-4"></div>
                 <div class="d-flex justify-content-end"> 
                 <button class="btn btn-primary btn-lg" [disabled]="!formEntrega.valid" type ="button" data-toggle="modal" data-target="#compraFinalizada" >Finalize sua compra</button> </div>
             <div class="p-2"></div>    
-            </div>
                 <div id="compraFinalizada" class="modal" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title">Compra realizada com sucesso!</h5>
+                            <h5 class="modal-title">Seu pagamento está sendo processado!</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             </div>
                             <div class="modal-body">
-                            <p>Uhuuuu, parabéns pela sua compra!</p>
+                            <p>Uhuuuu, parabéns pela sua compra, mas por favor, aguarde a confirmação do pagamento para receber asua compra!</p>
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#compraFinalizada" type="button">Fechado!</button>
@@ -172,6 +170,3 @@
                         </div>
                         </div>
                     </div>
-
-                    <div>{{ formEntrega.value | json}}</div>
-                    <div>{{ formEntrega.valid | json }}</div>

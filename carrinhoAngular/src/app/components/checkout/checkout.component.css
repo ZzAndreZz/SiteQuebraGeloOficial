@@ -1,3 +1,32 @@
 .paginaCheckout{
     margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.tituloEntrega {
+    font-size: larger;
+    color: rgb(16, 16, 121);
+    align-items: center;
+}
+
+
+.tituloFrete{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(26, 26, 73);
+    display: flex;
+    justify-content: center;
+}
+
+.tituloPagamento{
+    font-size: larger;
+    color: rgb(16, 16, 121);
+    align-items: center;
+    font-weight: bold;
+
+}
+
+
+label{
+    font-weight: bold;
 }
