@@ -1,39 +1,54 @@
 <!-- logo do site -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #4D85FE;">
-    <a class="navbar-brand" routerLink=""><img src="assets/LOGO3.png" alt="" width="100"></a>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #4d85fe;">
+    <a class="navbar-brand" href="#"><img src="assets/LOGO3.png" alt="" width="100"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
         aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
     </button>
+
     <!-- Menu do site -->
+
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
         <ul class="navbar-nav mr-auto" id="search">
             <li class="nav-item active">
-                <a class="nav-link p-4" routerLink="home">INÍCIO<span class="sr-only">(página atual)</span></a>
+                <a class="nav-link p-4" routerLink="/home">INÍCIO<span class="sr-only">(página atual)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link p-4" routerLink="produtos">PRODUTOS</a>
+                <a class="nav-link p-4" routerLink="/produtos">PRODUTOS</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link p-4" href="#faleConoscoLink">FALE CONOSCO</a>
+                <a class="nav-link p-4" routerLink="#faleConoscoLink">FALE CONOSCO</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link p-4" routerLink="/sobre-nos">SOBRE NÓS</a>
             </li>
         </ul>
+
+
         <!-- Espaço de pesquisa -->
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="pesquisar" type="search" placeholder="Pesquisar"
-                aria-label="Pesquisar">
-            <input type=image src="assets/lupa.png" width="30" height="30">
+
+        <form id="barra-de-pesquisa" class="form-inline my-2 my-lg-0">
+            <div id="divBusca">
+                <input type="text" id="txtBusca" placeholder="Pesquisar..."/>
+                <button class="btn rounded"><img src="assets/loupe (1).png" width="30" id="btnBusca" alt="Buscar"/></button>
+              </div>
         </form>
+
+
+
         <!-- Login do site -->
-        <a class="navbar-brand ml-3" routerLink="login">
-            <img src="assets/login.png" width="30" height="30" alt="">
+
+        <a class="navbar-brand ml-3" href="#">
+            <img src="assets/avatar.png" width="35" style="margin-left: 20px;" alt="">
         </a>
+
         <!-- Carrinho de compras -->
-        <a class="navbar-brand ml-3" routerLink="items">
+
+        <a class="navbar-brand ml-3" href="#">
             <img src="/assets/carrinho-de-compras.png" width="30" height="30" alt="">
         </a>
+
     </div>
+
 </nav>
