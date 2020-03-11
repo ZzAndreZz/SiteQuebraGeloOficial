@@ -3,7 +3,7 @@
   width: 775px;
   }
   #search a:hover{
-  background-color: rgb(255, 255, 255);
+  background-color:#ffffff;
   color:#4d85fe;
   }
   #conteudoNavbarSuportado{
@@ -13,7 +13,7 @@
   /* display: flex; */
   }
   #divBusca{
-  background-color:rgb(255, 255, 255);
+  background-color:#ffffff;
   border:none;
   border-radius:15px;
   width:257px;
@@ -34,5 +34,5 @@
   border: none;
   }
   #btnBusca:hover{
-  opacity: 0.6;
+  opacity: 0.4;
   }
