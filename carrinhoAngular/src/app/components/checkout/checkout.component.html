@@ -86,6 +86,7 @@
                         <p class="card-text">Vendido e fornecido por: My Ice</p>
                           </div>
                           <ul class="list-group list-group-flush">
+                             <li class="list-group-item"> <span id="subtotalValor"> Subtotal: </span> </li>
                              <li class="list-group-item"> <span id="totalValor"> Total: </span> </li>
                              </ul>
                                  </div>
@@ -98,7 +99,7 @@
                     <input class="form-control" type="text" id="numeroCartao" formControlName="nroCartao"
                         placeholder="Numero do cartão" maxlength="16" required>
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-4">
                         <label for="DtaValCartao">Data de validade</label>
                         <input class="form-control" type="month" id="DtaValCartao" formControlName="dtaValidade"
                             placeholder="Data de validade" required>
@@ -109,12 +110,12 @@
                             placeholder="CVV" maxlength="3" required>
                     </div>
 
-                <div class="form-group  col-md-5">
+                <div class="form-group  col-md-7">
                     <label for="nomeCartao">Nome do Titular</label>
                     <input class="form-control" type="text" id="nomeCartao" formControlName="nomeTitular"
                         placeholder="Nome do titular" required>
                 </div>
-                <div class="form-group  col-md-5">
+                <div class="form-group  col-md-4">
                     <label for="cpfTituCartao">CPF do Titular</label>
                     <input class="form-control" type="text"  formControlName="CPFtitular"  
                         placeholder="Digite o CPF do titular" maxlength="11" ng-model="CPFtitular" required> 
@@ -133,18 +134,19 @@
   <h5 class="card-header">  <strong>Frete</strong>  </h5>
           <div class="card align-content-center">
                 <div class="form-group">
-                        <div class="d-flex justify-content-around">
-                    <div class="form-check">
+                    <div class="form-check d-flex justify-content-around">
                         <label for="exampleRadios1"> 
-                            <div class="p-2"> </div>
                         <input type="radio" name="formasEnvio" id="freteRapido">
+                        <div class="p-1"></div>
                             Frete rápido <br> 2 dias úteis <br> R$100,00 
                         </label>
                         <label for="exampleRadios2">
                          <input type="radio" name="formasEnvio" id="freteNormal">
+                         <div class="p-1"></div>
+
                             Frete normal <br> Até 7 dias úteis <br> R$30,00 
                         </label>
-                    </div></div>
+                    </div>
                 </div>
             </div>
 </div>

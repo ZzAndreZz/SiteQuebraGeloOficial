@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Produtos } from 'src/app/models/Produtos';
 import { Carrinho } from 'src/app/models/Carrinho';
 
@@ -14,8 +14,13 @@ export class ResumoCompraComponent implements OnInit {
 
   constructor() { 
     this.carrinho.push(
-      new Carrinho(new Produtos("Balde de Gelo", 30.00), 2),
-      new Carrinho(new Produtos("Outro balde de gelo", 20.00), 1)
+      new Carrinho(new Produtos("Balde de Gelo", 30.00), 1),
+      new Carrinho(new Produtos("Balde de gelo", 20.00), 1),
+      new Carrinho(new Produtos("Balde de gelo", 20.00), 1),
+      new Carrinho(new Produtos("Balde de gelo", 20.00), 1)
+
+
+
     )
     this.carrinho.forEach(item =>{
       this.subTotal += item.produto.valor * item.qtd;
@@ -35,8 +40,15 @@ export class ResumoCompraComponent implements OnInit {
       carrinho.qtd--;      
       this.subTotal -= carrinho.produto.valor
     }
-  }
+  
 
+  // findDiscount(){
+  //   if (descontoInserido.value == "rdcliente")
+  //   this.subTotal = this.subTotal - 10
+  //   this.total = this.subTotal 
+
+  // }
+  }
   excluirProduto(produto){
     this.carrinho = this.carrinho.filter(item => item.produto != produto)
   }
