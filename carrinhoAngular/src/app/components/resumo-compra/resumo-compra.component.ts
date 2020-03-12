@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Produtos } from 'src/app/models/Produtos';
 import { Carrinho } from 'src/app/models/Carrinho';
+import { ItemsComponent } from '../items/items.component';
 
 @Component({
   selector: 'app-resumo-compra',
@@ -11,6 +12,7 @@ export class ResumoCompraComponent implements OnInit {
 
   carrinho: Carrinho[] = [];
   subTotal: number = 0;
+  total: number = 0;
 
   constructor() { 
     this.carrinho.push(
@@ -40,12 +42,16 @@ export class ResumoCompraComponent implements OnInit {
       carrinho.qtd--;      
       this.subTotal -= carrinho.produto.valor
     }
-  
-
-  }
-  excluirProduto(produto){
-    this.carrinho = this.carrinho.filter(item => item.produto != produto)
-  }
 
   
+  }
+  excluirProduto(item){
+    console.log(item)
+    this.subTotal -= (item.produto.valor * item.qtd)
+    this.carrinho = this.carrinho.filter(itemP => itemP != item)
+
+    }
+
+    
+
 }

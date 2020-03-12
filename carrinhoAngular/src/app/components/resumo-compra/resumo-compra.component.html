@@ -6,8 +6,9 @@
                     <h3> Meu carrinho</h3>
                     <div class="p-4"></div>
                     <div class="cart-header row" *ngFor="let item of carrinho">
-                        <div class="close" (click)="excluirProduto(item.produto)"> <img src="./assets/excluir.png"
-                                width="25" heigth="25" id="apagar1"></div>
+                        <div class="close" (click)="excluirProduto(item)"> <img src="./assets/excluir.png"
+                                width="25" heigth="25" id="apagar1"
+                                ></div>
                         <div class="cart-sec">
                             <div class="cart-item cyc">
                                 <img src="./assets/baldedegelo.jpg" class="img-responsive"></div>

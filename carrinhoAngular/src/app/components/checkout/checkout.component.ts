@@ -15,7 +15,7 @@ export class CheckoutComponent implements OnInit {
     this.formEntrega = this.createForm(new Entrega());
    }
 
-  address: Address = new Address("","","","","sp","sp")
+  address: Address = new Address("","","","","","")
 
   formEntrega: FormGroup
 
