@@ -42,12 +42,6 @@ export class ResumoCompraComponent implements OnInit {
     }
   
 
-  // findDiscount(){
-  //   if (descontoInserido.value == "rdcliente")
-  //   this.subTotal = this.subTotal - 10
-  //   this.total = this.subTotal 
-
-  // }
   }
   excluirProduto(produto){
     this.carrinho = this.carrinho.filter(item => item.produto != produto)
