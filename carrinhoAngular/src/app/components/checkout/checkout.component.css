@@ -5,7 +5,7 @@
 
 .tituloEntrega {
     font-size: larger;
-    color: rgb(16, 16, 121);
+    color: #4d85fe;
     align-items: center;
 }
 
@@ -13,14 +13,14 @@
 .tituloFrete{
     font-size: large;
     font-weight: bold;
-    color: rgb(26, 26, 73);
+    color: #0f2961;
     display: flex;
     justify-content: center;
 }
 
 .tituloPagamento{
     font-size: larger;
-    color: rgb(16, 16, 121);
+    color: #4d85fe;
     align-items: center;
     font-weight: bold;
 
