@@ -38,6 +38,7 @@ export class CheckoutComponent implements OnInit {
   }
 
 
+
   pegarCpf(){
     this.cepService.getCep(this.formEntrega.value).subscribe((data) => {
       this.address.setEndereco(data.cep, data.logradouro, data.bairro, data.uf, data.localidade)
@@ -58,6 +59,9 @@ export class CheckoutComponent implements OnInit {
   get cpf() {
     return this.formEntrega.get('CPFtitular');
   }
+
+
+  
 
 
 
