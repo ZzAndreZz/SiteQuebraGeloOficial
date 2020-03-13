@@ -6,11 +6,10 @@ import {
   FormControl,
   ReactiveFormsModule
 } from '@angular/forms';
-import { Formulario } from 'src/app/model/formulario';
-import { CepService } from 'src/app/services/cep.service';
-import { Entrega } from 'src/app/model/Entrega';
-
 // import { ClientesService } from "./clientes.service";
+import { Entrega } from 'src/app/models/Entrega';
+import { Address } from 'src/app/models/Address';
+import { CepService } from 'src/app/services/cep.service';
 
 @Component({
   selector: 'app-formulario',
@@ -22,9 +21,9 @@ export class FormularioComponent implements OnInit {
 
   constructor(private cepService: CepService) {
     this.formEntrega = this.createForm(new Entrega());
-  }
+   }
 
-  formulario: Formulario = new Formulario("", "", "", "", "sp", "sp")
+  address: Address = new Address("","","","","sp","sp")
 
   formEntrega: FormGroup
 
@@ -47,19 +46,19 @@ export class FormularioComponent implements OnInit {
   }
 
 
-  pegarCpf() {
+  pegarCEP(){
     this.cepService.getCep(this.formEntrega.value).subscribe((data) => {
-      this.formulario.setEndereco(data.cep, data.logradouro, data.bairro, data.uf, data.localidade)
-      this.formEntrega.controls['endereco'].patchValue(this.formulario.endereco);
-      this.formEntrega.controls['bairro'].patchValue(this.formulario.bairro);
-      this.formEntrega.controls['estado'].patchValue(this.formulario.estado);
-      this.formEntrega.controls['cidade'].patchValue(this.formulario.cidade);
+      this.address.setEndereco(data.cep, data.logradouro, data.bairro, data.uf, data.localidade)
+      this.formEntrega.controls['endereco'].patchValue(this.address.endereco);
+      this.formEntrega.controls['bairro'].patchValue(this.address.bairro);
+      this.formEntrega.controls['estado'].patchValue(this.address.estado);
+      this.formEntrega.controls['cidade'].patchValue(this.address.cidade);
     })
   }
 
 
 
-  compraRealizada() {
+  compraRealizada(){
     console.log(this.formEntrega.value)
   }
 
@@ -71,5 +70,4 @@ export class FormularioComponent implements OnInit {
 
 
   ngOnInit(): void {
-  }
-}
+}}
