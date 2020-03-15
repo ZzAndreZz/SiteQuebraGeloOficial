@@ -9,11 +9,9 @@
                 <p class="descricao descricao-secundaria">Entre com sua conta</p>
                 <form name="formlogin" class="form">
                     <label class="label-input">
-                        <i class="far fa-envelope icone-modify"></i>
                         <input class="email" type="email" name="email" placeholder="Email" required>
                     </label>
                     <label class="label-input">
-                        <i class="fas fa-user icone-modify"></i>
                         <input id="senha" type="password" name="password" placeholder="Senha" required>
                     </label>
                     <button type="submit" class="btn2 btn-secundario">Logar</button>
@@ -21,30 +19,32 @@
                     <a type="button" href="#" class="text-center p-2" data-toggle="modal" data-target="#exampleModal">
                         Esqueci a senha
                     </a>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Recuperar senha</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <input class="email" type="email" name="email" placeholder="Email" required>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <a routerLink="/cadastro" class="text-center">Não tem cadastro? Cadastre-se</a>
                 </form>
             </div> <!--  segunda coluna -->
         </div> <!--  primeiro content -->
     </div>
+    <!-- Modal -->
+    <form>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Recuperar senha</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input class="emailmodal" type="email" name="emailmodal" placeholder="Digite seu Email">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </main>
