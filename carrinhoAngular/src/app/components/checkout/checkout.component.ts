@@ -29,11 +29,6 @@ export class CheckoutComponent implements OnInit {
       bairro: new FormControl(entrega.bairro),
       cidade: new FormControl(entrega.cidade),
       estado: new FormControl(entrega.estado),
-      nroCartao: new FormControl(entrega.nroCartao),
-      dtaValidade: new FormControl(entrega.dtaValidade),
-      CVV: new FormControl(entrega.CVV),
-      nomeTitular: new FormControl(entrega.nomeTitular),
-      CPFtitular: new FormControl(entrega.CPFtitular)
     })
   }
 
@@ -55,10 +50,6 @@ export class CheckoutComponent implements OnInit {
     console.log(this.formEntrega.value)
   }
 
-
-  get cpf() {
-    return this.formEntrega.get('CPFtitular');
-  }
 
 
   

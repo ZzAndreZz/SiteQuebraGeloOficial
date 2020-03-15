@@ -1,53 +1,29 @@
-<main class="container">
-    <div class="paginaItems">
-        <div class="col-md-12 row">
-            <div class="col-md-7">
-                <div class="cart-items">
-                    <h3> Meu carrinho</h3>
-                    <div class="p-4"></div>
-                    <div class="cart-header row" *ngFor="let item of carrinho">
-                        <div class="close" (click)="excluirProduto(item)"> <img src="./assets/excluir.png"
-                                width="25" heigth="25" id="apagar1"
-                                ></div>
-                        <div class="cart-sec">
-                            <div class="cart-item cyc">
-                                <img src="./assets/baldedegelo.jpg" class="img-responsive"></div>
-                            <div class="cart-item-info">
-                                <h5><a class="item_nome" href="#">
-                                        {{item.produto.nome}}</a>
-                                    <span>Vendido e fornecido por: My Ice.</span>
-                                </h5>
-                                <span>R${{item.produto.valor}},00</span>
-                                <ul>
-                                    <p>Quantidade:
-                                        <input type=image src="./assets/menos.png" width="18" height="18"
-                                            (click)="diminuir(item)">
-                                        <input [ngClass]="{'arredondar':true}" value="1" [(ngModel)]="item.qtd"
-                                            style="min-width:10px;" disable>
-                                        <input type=image src="./assets/mais.png" width="18" height="18"
-                                            (click)="aumentar(item)" ></p>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-md-4 cart-total">
+        <div class="col-md-12">
+            <div class="cart-total">
                 <h5> Resumo da Compra </h5>
-                <div class="card" style="width: 20rem;">
-                    <ul class="list-group list-group-flush">
-                        <div id="subtotal">
-                            <li class="list-group-item"><strong> Subtotal </strong>
-                                <p> <span id="subtotalValor"> R$ {{subTotal}},00 </span></p>
-                            </li>                    
-                        <li class="list-group-item"><strong> Total </strong> <span id="totalValor">R${{subTotal}},00 </span> </li>
-                        <div class="d-flex flex-column bd-highlight mb-3">
-                            <div class="p-2 bd-highlight"><button type="button" class="btn btn-primary btn-block"
-                                    routerLink="/checkout">Continuar</button> </div>
-                            <div class="p-2 bd-highlight"><button type="button"
-                                    class="btn btn-outline-primary btn-block" href="produtos.html"> Escolher mais
-                                    produtos </button></div>
-                        </div>
+                <div class="card" style="width: 16rem;">
+                    <ul class="list-group list-group-flush">            
+                        <li class="list-group-item"><strong> Total </strong> <span id="totalValor">R${{subTotal}},00 </span> 
+                            </li>
+        <div class="p-3"></div>
+
+          <h5> Produtos: </h5>
+          <div class="p-2">
+                <div class="cart-items">                    
+                    <div class="cart-header row" *ngFor="let item of carrinho">
+                            <div class="cart-sec">
+                                <div class="cart-item cyc">
+                                    <img src="./assets/baldedegelo.jpg" class="img-responsive"></div>
+                                <div class="cart-item-info">
+                                    <h5><a class="item_nome" href="#">
+                                            {{item.produto.nome}}</a>
+                                        <span>Vendido e fornecido por: My Ice.</span>
+                                    </h5>
+                                    <span>R${{item.produto.valor}},00</span>
+
+                                    </div></div></div> </div>
+
+
+                   
+
+

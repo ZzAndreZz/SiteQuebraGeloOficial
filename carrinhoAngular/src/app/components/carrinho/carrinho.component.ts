@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Produtos } from 'src/app/models/Produtos';
 import { Carrinho } from 'src/app/models/Carrinho';
 
 @Component({
-  selector: 'app-resumo-compra',
-  templateUrl: './resumo-compra.component.html',
-  styleUrls: ['./resumo-compra.component.css']
+  selector: 'app-carrinho',
+  templateUrl: './carrinho.component.html',
+  styleUrls: ['./carrinho.component.css']
 })
-export class ResumoCompraComponent implements OnInit {
+export class CarrinhoComponent implements OnInit {
 
   carrinho: Carrinho[] = [];
   subTotal: number = 0;

@@ -3,6 +3,7 @@
     <div class="p-3"></div>
     <main class=container>
         <form [formGroup]="formEntrega" (ngSubmit)="compraRealizada()">
+            <div class="col-md-8 offset-md-2">
                 <header class="tituloEntrega"> 
                 <strong>  ENTREGA </strong>
                 </header>
@@ -18,8 +19,8 @@
                     <input class="form-control" type="text" id="endereco" formControlName="endereco"
                         placeholder="Digite o endereço" required>
                 </div>
-                    <div class="form-group col-md-2">
-                        <label for="numeroEnderecoUsuario">Numero</label>
+                    <div class="form-group col-md-3">
+                        <label for="numeroEnderecoUsuario">Número</label>
                         <input class="form-control" type="text" id="numeroEnderecoUsuario" formControlName="nroEndereco"
                             placeholder="Digite o numero" required></div>
 
@@ -33,7 +34,7 @@
                         <input class="form-control" type="text" id="bairro" formControlName="bairro"
                             placeholder="Digite o bairro" required>
                             </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                             <label for="cidade">Cidade</label>
                             <input class="form-control" type="text" id="cidade" formControlName="cidade"
                                 placeholder="Digite a cidade" required>
@@ -72,101 +73,27 @@
                             </select>
                         </div>
                     </div>
-
-        <div class="p-3"></div>
-                <header class="tituloPagamento">  PAGAMENTO 
-                </header>
-                <div class="p-2"></div>
-                <div class="row">
-                <div class="col-md-4">
-                    <div class="card" style="width: 18rem;">
-                    <div class="card-header">
-                        <strong> Resumo da Compra </strong>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Produto</li>
-                        <li class="list-group-item"><strong> Total </strong></li>
-                    </ul>
-                    </div>
+                <div class="p-4"></div>
 </div>
-<div class="p-2"></div>
-
-            <div class="col-md-7">
-            <div class="form-row">
-                <div class="form-group col-md-5">
-                    <label for="numeroCartao">Numero do Cartão</label>
-                    <input class="form-control" type="text" id="numeroCartao" formControlName="nroCartao"
-                        placeholder="Numero do cartão" maxlength="16" required>
-                </div>
-                <div class="form-group col-md-4">
-                        <label for="DtaValCartao">Data de Validade</label>
-                        <input class="form-control" type="month" id="DtaValCartao" formControlName="dtaValidade"
-                            placeholder="Data de validade" required>
-                    </div>
-                    <div class="form-group col-md-2"> 
-                        <label for="segurCartao">CVV</label>
-                        <input class="form-control" type="text" id="segurCartao" formControlName="CVV"
-                            placeholder="CVV" maxlength="3" required>
-                    </div>
-
-                <div class="form-group  col-md-7">
-                    <label for="nomeCartao">Nome do Titular</label>
-                    <input class="form-control" type="text" id="nomeCartao" formControlName="nomeTitular"
-                        placeholder="Nome do titular" required>
-                </div>
-                <div class="form-group  col-md-4">
-                    <label for="cpfTituCartao">CPF do Titular</label>
-                    <input class="form-control" type="text"  formControlName="CPFtitular"  
-                        placeholder="Digite o CPF do titular" maxlength="11" ng-model="CPFtitular" required> 
-                            <div *ngIf="!cpf.pristine && cpf.errors">
-                                <p *ngIf="cpf.errors.required">
-                                    CPF é obrigatório.
-                                </p>
-                                <p *ngIf="cpf.errors.cpfInvalido">
-                                    Digite um CPF válido
-                                </p>
-                                </div>
-                            </div>
-                </div>
-
-                <div class="card text-center col-md-10">
-  <h5 class="card-header tituloFrete">  Tipos de Entrega  </h5>
-          <div class="card align-content-center">
-                <div class="form-group">
-                    <div class="form-check d-flex justify-content-around">
-                        <label for="exampleRadios1"> 
-                        <input type="radio" name="formasEnvio" id="freteRapido">
-                        <div class="p-1"></div>
-                            Frete rápido <br> 2 dias úteis <br> R$100,00 
-                        </label>
-                        <label for="exampleRadios2">
-                         <input type="radio" name="formasEnvio" id="freteNormal">
-                         <div class="p-1"></div>
-
-                            Frete normal <br> Até 7 dias úteis <br> R$30,00 
-                        </label>
-                    </div>
-                </div>
-            </div>
-</div>
+<app-pagamento></app-pagamento>
 <div class="p-4"></div>
-                <div class="d-flex justify-content-end"> 
+                <div class="d-flex justify-content-center"> 
                 <button class="btn btn-primary btn-lg" [disabled]="!formEntrega.valid" type ="button" data-toggle="modal" data-target="#compraFinalizada" >Finalize sua compra</button> </div>
             <div class="p-2"></div>    
                 <div id="compraFinalizada" class="modal" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title">Seu pagamento está sendo processado!</h5>
+                            <h5 class="modal-title">Confirme a sua compra!</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             </div>
                             <div class="modal-body">
-                            <p>Uhuuuu, parabéns pela sua compra, mas por favor, aguarde a confirmação do pagamento para receber asua compra!</p>
+                             <div class="ml-6">     <app-resumo-compra></app-resumo-compra></div>
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#compraFinalizada" type="button" routerLink="/">Fechado!</button>
+                            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#compraFinalizada" type="button" routerLink="/">Confirmado!</button>
                             </div>
                         </div>
                         </div>
