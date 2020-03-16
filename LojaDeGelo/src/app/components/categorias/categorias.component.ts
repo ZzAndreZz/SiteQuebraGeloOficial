@@ -13,6 +13,7 @@ export class CategoriasComponent implements OnInit {
 
   constructor() {
 
+    this.categoria.push(new Categoria(0, "Todos"))
     this.categoria.push(new Categoria(1, "Gelos"));
     this.categoria.push(new Categoria(2, "Gelos para medicação"));
     this.categoria.push(new Categoria(3, "Gelos para lazer"));

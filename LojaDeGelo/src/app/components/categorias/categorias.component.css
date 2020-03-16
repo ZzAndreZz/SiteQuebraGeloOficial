@@ -1,0 +1,11 @@
+a{
+    color: inherit;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#tituloCategoria:hover{
+    background-color: #4d85fe;
+}

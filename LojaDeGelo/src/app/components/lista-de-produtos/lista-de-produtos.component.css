@@ -2,17 +2,9 @@
     margin-top: 100px;
 }
 
-a{
-    color: inherit;
-}
-
-a:hover{
-    text-decoration: none;
-}
-
 .card:hover{
-    border: solid rgb(127, 126, 133);
-    box-shadow: rgb(127, 126, 133);
+    border: solid rgb(141, 127, 224);
+    box-shadow: rgb(141, 127, 224);
 }
 
 #preco{
@@ -31,6 +23,10 @@ a:hover{
 
 #filtros{
     height: 30px;
+}
+
+#precos{
+    color: rgb(31, 31, 252);
 }
 
 @media only screen and (max-width: 768px) {

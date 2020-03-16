@@ -6,6 +6,10 @@ import {
   FormControl,
   ReactiveFormsModule
 } from '@angular/forms';
+import { Address } from 'src/app/models/Address';
+import { CepService } from 'src/app/services/cep.service';
+import { Cadastro } from 'src/app/models/Cadastro';
+// import { NgxViacepService } from '@brunoc/ngx-viacep';
 // import { ClientesService } from "./clientes.service";
 
 @Component({
@@ -15,16 +19,49 @@ import {
 })
 export class FormularioComponent implements OnInit {
 
-  // form: FormGroup;
+  formCadastro: FormGroup;
 
+  address: Address = new Address("","","","","","")
   // clientes: string[] = [];
 
   // clienteService: ClientesService;
 
   //  formCadastro;
-  constructor() {
+  constructor(private cepService: CepService) {
+    this.formCadastro = this.createForm(new Cadastro(null,"","",null,"","","","","",null,"","","",""));
+    }
     // private formBuilder: FormBuilder
     // this.clienteService = new ClientesService();
+
+  private createForm(cadastro: Cadastro){
+    return new FormGroup({
+      id: new FormControl(cadastro.idCadastro),
+      name: new FormControl(cadastro.name),
+      cpf: new FormControl(cadastro.cpf),
+      tel: new FormControl(cadastro.tel),
+      email: new FormControl(cadastro.email),
+      senha: new FormControl(cadastro.senha),
+      confirmarSenha: new FormControl(cadastro.confirmarSenha),
+      cep: new FormControl(cadastro.cep),
+      endereco: new FormControl(cadastro.endereco),
+      numeroCasa: new FormControl(cadastro.numeroCasa),
+      complementoCasa: new FormControl(cadastro.complementoCasa),
+      bairro: new FormControl(cadastro.bairro),
+      cidade: new FormControl(cadastro.cidade),
+      estado: new FormControl(cadastro.estado),
+
+    })
+  }
+  
+
+  pegarCEP(){
+    this.cepService.getCep(this.formCadastro.value).subscribe((data) => {
+      this.address.setEndereco(data.cep, data.logradouro, data.bairro, data.uf, data.localidade)
+      this.formCadastro.controls['endereco'].patchValue(this.address.endereco);
+      this.formCadastro.controls['bairro'].patchValue(this.address.bairro);
+      this.formCadastro.controls['estado'].patchValue(this.address.estado);
+      this.formCadastro.controls['cidade'].patchValue(this.address.cidade);
+    })
   }
 
   ngOnInit() {
@@ -74,3 +111,37 @@ export class FormularioComponent implements OnInit {
   //   this.form.reset();
   // }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

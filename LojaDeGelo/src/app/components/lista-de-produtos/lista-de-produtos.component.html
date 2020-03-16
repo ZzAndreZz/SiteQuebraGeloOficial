@@ -1,9 +1,9 @@
-<div class="container-fluid">
+<div class="container-fluid" #teste>
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-12 font-weight-bold paginaDeProdutos">
+        <div class="col-lg-2 col-md-3 col-sm-12 font-weight-bold paginaDeProdutos">
             <app-categorias (categoriaClicada)="categoriaSelecionada($event)"></app-categorias>
         </div>
-        <div class="col-9 paginaDeProdutos">
+        <div class="col-10 paginaDeProdutos">
             <p class="">Ordenar por:
                 <select (change)="filtrar($event.target.value)" class="border border-dark mr-2">
                     <option selected disabled>Selecione</option>
@@ -32,12 +32,12 @@
                 </ul>
             </nav>
             <section class="row" id="produtos">
-                <div class="card col-lg-3 col-md-4 col-5" *ngFor="let produto of produtos" style="width: 18rem;">
+                <div class="card col-lg-3 col-md-4 col-5" (click)="produtoSelecionado(produto)" *ngFor="let produto of produtos" style="width: 18rem;">
                     <img [src]="produto.imagem" height="220px" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{produto.titulo}}</h5>
-                        <a routerLink="produto-sozinho" class="card-text stretched-link">
-                            <p><s>de: {{produto.precoCheio.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</s> <br> <b id="preco">
+                        <h5 class="card-title text-primary"><strong>{{produto.nome}}</strong></h5> 
+                        <a routerLink="/produto-sozinho" class="card-text stretched-link" id="cardsDosProdutos">
+                            <p id="precos"><s>de: {{produto.precoCheio.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</s> <br> <b id="preco">
                                 por {{produto.precoDesconto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}}</b> <br> ou {{produto.precoBoleto.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}} via Boleto
                                 Bancário</p>
                         </a>

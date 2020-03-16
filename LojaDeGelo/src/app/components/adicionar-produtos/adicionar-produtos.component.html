@@ -1,0 +1,41 @@
+<div class="container justify-content-center row mb-3" id="addForm">
+    <div class="md-6">
+    <h2>Adicionar Produto</h2>
+    <form [formGroup]="formProduto" (ngSubmit)="enviarProduto()">
+        <div>
+        <p>Código <br> <input type="text" formControlName="cod"></p>
+        
+    </div>
+    <div>
+        <p>Imagem <br> <input type="file" formControlName="imagem"></p>
+        
+    </div>
+    <div>
+        <p>Título <br> <input type="text" formControlName="titulo"></p>
+        
+    </div>
+    <div>
+        <p>Descrição <br> <input type="text" formControlName="desc"></p>
+        
+    </div>
+    <div>
+        <p>Preço Cheio <br>  <input type="text" formControlName="precoCheio"></p>
+       
+    </div>
+    <div>
+        <p>Preço com Desconto <br> <input type="text" formControlName="precoDesconto"></p>
+        
+    </div>
+    <div>
+        <p>Preço no Boleto <br>  <input type="text" formControlName="precoBoleto"></p>
+       
+    </div>
+    <div>
+        <p>ID Categoria <br><input type="text" formControlName="idCategoria"></p>
+        
+    </div>
+    <button class="btn btn-success" type="submit">Salvar</button>
+</form>
+</div>
+<img class="ml-5 mt-5" src="assets/pinguim_adc_produto.png" height="400px" alt="">
+</div>

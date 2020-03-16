@@ -10,7 +10,29 @@
   font-family: 'Raleway', 'Extra-Light';
   font-size: small;
   text-shadow: 4px 4px 4px #aaa;
+  /* display: flex; */
   }
-  #barra-de-pesquisa{
-  display: contents;
+  #divBusca{
+  background-color:rgb(255, 255, 255);
+  border:none;
+  border-radius:15px;
+  width:257px;
+  }
+  #txtBusca{
+  float:left;
+  background-color:transparent;
+  padding-left:10px;
+  font-style:italic;
+  font-size:16px;
+  border:none;
+  height:36px;
+  width:200px;
+  padding: 22px;
+  }
+  #btnBusca{
+      background-color: transparent;
+      border: none;
+  }
+  #btnBusca:hover{
+      opacity: 0.6;
   }

@@ -1,0 +1,63 @@
+            <div class="col-md-8 offset-md-2">
+
+                <header class="tituloPagamento">  PAGAMENTO 
+                </header>
+                <div class="mt-4">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="numeroCartao">Numero do Cartão</label>
+                    <input class="form-control" type="text" id="numeroCartao" formControlName="nroCartao"
+                        placeholder="Numero do cartão" maxlength="16" required>
+                </div>
+                <div class="form-group col-md-4">
+                        <label for="DtaValCartao">Data de Validade</label>
+                        <input class="form-control" type="month" id="DtaValCartao" formControlName="dtaValidade"
+                            placeholder="Data de validade" required>
+                    </div>
+                    <div class="form-group col-md-2"> 
+                        <label for="segurCartao">CVV</label>
+                        <input class="form-control" type="text" id="segurCartao" formControlName="CVV"
+                            placeholder="CVV" maxlength="3" required>
+                    </div>
+
+                <div class="form-group  col-md-7">
+                    <label for="nomeCartao">Nome do Titular</label>
+                    <input class="form-control" type="text" id="nomeCartao" formControlName="nomeTitular"
+                        placeholder="Nome do titular" required>
+                </div>
+                <div class="form-group  col-md-5">
+                    <label for="cpfTituCartao">CPF do Titular</label>
+                    <input class="form-control" type="text"  formControlName="CPFtitular"  
+                        placeholder="Digite o CPF do titular" maxlength="11" ng-model="CPFtitular" required> 
+                            <div *ngIf="!cpf.pristine && cpf.errors">
+                                <p *ngIf="cpf.errors.required">
+                                    CPF é obrigatório.
+                                </p>
+                                <p *ngIf="cpf.errors.cpfInvalido">
+                                    Digite um CPF válido
+                                </p>
+                                </div>
+                            </div>
+                </div>
+
+                <div class="card text-center col-md-12">
+  <h5 class="card-header tituloFrete">  Tipos de Entrega  </h5>
+          <div class="card align-content-center">
+                <div class="form-group">
+                    <div class="form-check d-flex justify-content-around">
+                        <label for="exampleRadios1"> 
+                        <input type="radio" name="formasEnvio" id="freteRapido">
+                        <div class="p-1"></div>
+                            Frete rápido <br> 2 dias úteis <br> R$100,00 
+                        </label>
+                        <label for="exampleRadios2">
+                         <input type="radio" name="formasEnvio" id="freteNormal">
+                         <div class="p-1"></div>
+
+                            Frete normal <br> Até 7 dias úteis <br> R$30,00 
+                        </label>
+                    </div>
+                </div>
+            </div>
+</div>
+

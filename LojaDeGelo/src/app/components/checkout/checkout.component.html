@@ -3,47 +3,46 @@
     <div class="p-3"></div>
     <main class=container>
         <form [formGroup]="formEntrega" (ngSubmit)="compraRealizada()">
-        <div class="col-md-12 row">
-            <div class="col-md-6">
-                <header class="bg-primary text-light p-2 border solid"><img src="./assets/truck.png" width="50" height="50" alt=""> <strong>  Entrega </strong>
+            <div class="col-md-8 offset-md-2">
+                <header class="tituloEntrega"> 
+                <strong>  ENTREGA </strong>
                 </header>
-                <div class="form-group">
-                        <div class="p-2"></div>
-                    <label for="cepUsuario">CEP</label>
-                                        <input class="form-control" type="text" id="cepUsuario" formControlName="cep"
-                        placeholder="Digite o seu numero do CEP"  maxlength="8" required>
-
-
-   </div>
-                <div class="form-group">
-                    <label for="enderecoUsuario">Endereço</label>
-                    <input class="form-control" type="text" id="enderecoUsuario" formControlName="endereco"
-                        placeholder="Digite o seu endereço" required>
-                    <div class="form-group">
-                        <label for="numeroEnderecoUsuario">Numero</label>
+                <div class="p-3"></div>
+               <div class="form-row">
+                 <div class="form-group col-md-3">
+                    <label for="cep">CEP</label>
+                                        <input class="form-control" type="text" id="cep" (blur)="pegarCpf()" formControlName="cep"
+                        placeholder="Digite o CEP"  maxlength="8" required>
+                </div>
+            <div class="form-group col-md-6">
+                    <label for="endereco">Endereço</label>
+                    <input class="form-control" type="text" id="endereco" formControlName="endereco"
+                        placeholder="Digite o endereço" required>
+                </div>
+                    <div class="form-group col-md-3">
+                        <label for="numeroEnderecoUsuario">Número</label>
                         <input class="form-control" type="text" id="numeroEnderecoUsuario" formControlName="nroEndereco"
-                            placeholder="Digite o seu numero" required>
-                    </div>
-                    <div class="form-group">
+                            placeholder="Digite o numero" required></div>
+
+                    <div class="form-group col-md-4">
                         <label for="complementoUsuario">Complemento</label>
                         <input class="form-control" type="text" id="complementoUsuario" formControlName="complemento"
-                            placeholder="Digite o seu complemento">
-                    </div>
-                    <div class="form-group">
-                        <label for="bairroUsuario">Bairro</label>
-                        <input class="form-control" type="text" id="bairroUsuario" formControlName="bairro"
-                            placeholder="Digite o seu bairro" required>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-6">
-                            <label for="cidadeUsuario">Cidade</label>
-                            <input class="form-control" type="text" id="cidadeUsuario" formControlName="cidade"
-                                placeholder="Digite o seu cidade" required>
+                            placeholder="Digite o complemento">
+                            </div>
+                    <div class="form-group col-md-3">
+                        <label for="bairro">Bairro</label>
+                        <input class="form-control" type="text" id="bairro" formControlName="bairro"
+                            placeholder="Digite o bairro" required>
+                            </div>
+                    <div class="form-group col-md-3">
+                            <label for="cidade">Cidade</label>
+                            <input class="form-control" type="text" id="cidade" formControlName="cidade"
+                                placeholder="Digite a cidade" required>
                         </div>
-                        <div class="col-6">
-                            <label for="estadoUsuario">Estado</label>
-                            <select class="form-control" formControlName="estado" required>
-                                <option value="" disable selected>Estado</option>"
+                        <div class="form-group col-md-2">
+                            <label for="estado">Estado</label>
+                            <select class="form-control" formControlName="estado" id="estado" required>
+                                <option value="" selected>Estado</option>
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AP">Amapá</option>
@@ -74,104 +73,30 @@
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <label for="exampleRadios1">
-                            Frete especial <br> R$100,00
-                        </label>
-                        <input type="radio" name="formasEnvio" id="freteRapido">
-                        <label for="exampleRadios2">
-                            Frete normal <br> R$30,00
-                        </label>
-                        <input type="radio" name="formasEnvio" id="freteNormal">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <header class="bg-primary text-light p-2 border solid"><img src="./assets/cartao-de-credito.png" width="50" height="50"
-                        alt="Pagamento"> <strong> Pagamento </strong>
-                </header>
-                <div class="p-2"></div>
-                    <label>Resumo da Compra</label>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body"> <img src="./assets/gelo.jpg" width="65" height="65"> <br>
-                                Produto: <br>
-                                Quantidade:<br> 
-                            </div>
-                        </div>
-                </div>
-                <div class="p-3">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                Frete:<br>
-                                Total: <span id="totalValor"> </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="numeroCartao">Numero do cartão</label>
-                    <input class="form-control" type="text" id="numeroCartao" formControlName="nroCartao"
-                        placeholder="Digite o numero do cartão" maxlength="16" required>
-                </div>
-                <div class="form-group row">
-                    <div class="col-8">
-                        <label for="DtaValCartao">Data de validade</label>
-                        <input class="form-control" type="month" id="DtaValCartao" formControlName="dtaValidade"
-                            placeholder="Data de validade" required>
-                    </div>
-                    <!-- <div class="form-group"> -->
-                    <div class="col-4">
-                        <label for="segurCartao">CVV</label>
-                        <input class="form-control" type="text" id="segurCartao" formControlName="CVV"
-                            placeholder="Digite o código" maxlength="3" required>
-                    </div>
-
-                </div>
-                <div class="form-group">
-                    <label for="nomeCartao">Nome do Titular</label>
-                    <input class="form-control" type="text" id="nomeCartao" formControlName="nomeTitular"
-                        placeholder="Digite o nome do titular" required>
-                </div>
-                <div class="form-group">
-                    <label for="cpfTituCartao">CPF do Titular</label>
-                    <input class="form-control" type="text"  formControlName="CPFtitular"  
-                        placeholder="Digite o CPF do titular" maxlength="11" ng-model="CPFtitular" required> 
-                            <div *ngIf="!cpf.pristine && cpf.errors">
-                                <p *ngIf="cpf.errors.required">
-                                    CPF é obrigatório.
-                                </p>
-                                <p *ngIf="cpf.errors.cpfInvalido">
-                                    Digite um CPF válido
-                                </p>
-                                </div>
-
-                </div>
-                <div class="d-flex justify-content-end"> 
+                <div class="p-4"></div>
+</div>
+<app-pagamento></app-pagamento>
+<div class="p-4"></div>
+                <div class="d-flex justify-content-center"> 
                 <button class="btn btn-primary btn-lg" [disabled]="!formEntrega.valid" type ="button" data-toggle="modal" data-target="#compraFinalizada" >Finalize sua compra</button> </div>
             <div class="p-2"></div>    
-            </div>
                 <div id="compraFinalizada" class="modal" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title">Compra realizada com sucesso!</h5>
+                            <h5 class="modal-title">Confirme a sua compra!</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                             </div>
                             <div class="modal-body">
-                            <p>Uhuuuu, parabéns pela sua compra!</p>
+                             <div class="ml-6">     
+                                 <app-resumo-compra></app-resumo-compra>
+                            </div>
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#compraFinalizada" type="button">Fechado!</button>
+                            <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#compraFinalizada" type="button" routerLink="/">Confirmado!</button>
                             </div>
                         </div>
                         </div>
                     </div>
-
-                    <div>{{ formEntrega.value | json}}</div>
-                    <div>{{ formEntrega.valid | json }}</div>

@@ -1,6 +1,6 @@
 <main class="container" id="container" >
 
-    <form id="checkout" class="row ml-4 p-5">
+    <form id="checkout" [formGroup]="formCadastro" class="row ml-4 p-5">
      
   
         <div class="col-md-6">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="confirmarSenhaUsuario">Confirme a Senha</label>
-                    <input class="form-control" type="password" id="confirmarSenhaUsuario" name="confirmarSenhaUsuario" placeholder="Confirmar Senha" formControlName="senha" required>
+                    <input class="form-control" type="password" id="confirmarSenhaUsuario" name="confirmarSenhaUsuario" placeholder="Confirmar Senha" formControlName="confirmarSenha" required>
                 </div>
                 
             </div>
@@ -44,7 +44,7 @@
             <div class="p-2">
                 <div class="form-group">
                     <label for="cepUsuario">CEP</label>
-                    <input class="form-control" type="number" id="cepUsuario" name="cepUsuario" placeholder="Digite seu cep" formControlName="cep" maxlength="8" required>
+                    <input class="form-control" type="number" id="cepUsuario"  name="cepUsuario" placeholder="Digite seu cep" formControlName="cep" maxlength="8" (blur)="pegarCEP()" required>
                 </div>
                 <div class="form-group">
                         <label for="enderecoUsuario">Endereço</label>
@@ -52,24 +52,25 @@
                 </div>
                 <div class="form-group">
                         <label for="numeroUsuario">Numero</label>
-                        <input class="form-control" type="number" id="numeroUsuario" name="numeroUsuario" placeholder="Digite seu numero da residencia" maxlength="3" required>
+                        <input class="form-control" type="number" id="numeroUsuario" name="numeroUsuario" placeholder="Digite seu numero da residencia" maxlength="3" formControlName="numeroCasa" required>
                 </div>
                 <div class="form-group">
                         <label for="complementoUsuario">Complemento</label>
-                        <input class="form-control" type="text" id="complementoUsuario" name="complementoUsuario" placeholder="Digite seu complemento" maxlength="40" required>
+                        <input class="form-control" type="text" id="complementoUsuario" name="complementoUsuario" placeholder="Digite seu complemento" maxlength="40" formControlName="complementoCasa" required>
                 </div>
                 <div class="form-group">
                         <label for="bairroUsuario">Bairro</label>
-                        <input class="form-control" type="text" id="bairroUsuario" name="bairroUsuario" placeholder="Digite seu bairro" maxlength="30" required>
+                        <input class="form-control" formControlName="bairro" type="text" id="bairroUsuario" name="bairroUsuario" placeholder="Digite seu bairro" maxlength="30" required>
                 </div>
                 <div class="form-group row">
                     <div class="col-6">
                             <label for="cidadeUsuario">Cidade</label>
-                            <input class="form-control" type="text" id="cidadeUsuario" name="cidadeUsuario" placeholder="Digite seu cidade" maxlength="40" required>
+                            <input class="form-control" formControlName="cidade" type="text" id="cidadeUsuario" name="cidadeUsuario" placeholder="Digite seu cidade" maxlength="40" required>
                     </div>
                     <div class="col-6">
                             <label for="estadoUsuario">Estado</label>
-                            <select id="estadoUsuario" name="estadoUsuario" class="form-control">
+                            <select id="estadoUsuario"
+                            formControlName="estado" name="estadoUsuario" class="form-control">
                                 <option value="" disabled selected>Estado</option>
                                 <option value="AC">AC</option>
                                   <option value="AL">AL</option>
@@ -97,6 +98,7 @@
                                   <option value="SC">SC</option>
                                   <option value="SP">SP</option>
                                   <option value="SE">SE</option>
+                                  <option value="TO">TO</option>
                             </select>
                     </div>         
                 <!-- </div> -->
@@ -105,7 +107,7 @@
   
   
             <div id="btnfinalizarcadastro"  class="d-flex justify-content-end">
-              <button  class="btn btn-success" type="button"  data-toggle="modal" data-target="#compraFinalizada" >Finalizar Cadastro</button>
+              <button  class="btn btn-success" type="button"  data-toggle="modal" data-target="#cadastroFinalizado" >Finalizar Cadastro</button>
           </div>
   
          

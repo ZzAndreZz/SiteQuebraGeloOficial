@@ -1,6 +1,5 @@
-<main class="container">
-    <p class="text-muted"><a routerLink="">Home</a> > <a routerLink="">Produtos</a> > <a
-            routerLink="">Gelo Artifical Reutilizável</a></p>
+<main class="container" >
+    <p class="text-muted"><a routerLink="">Home</a> > <a routerLink="/lista-de-produtos">Produtos</a></p>
     <div class="row">
         <div class="col-lg-2">
         </div>
@@ -8,8 +7,8 @@
             <img src="assets/produto1.jpg" width="80%" alt="">
         </div>
         <div class="col-lg-4">
-            <h4>{{produtos[0].titulo}}</h4>
-            <p>Código: ????? Marca: ??????</p>
+            <h4>{{produtos[0].nome}}</h4>
+            <p>Código: 1</p>
             <hr>
             <p>{{produtos[0].desc}}</p>
             <div class="row">
@@ -23,7 +22,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 d-flex">
-                    <button id="adcCarrinho" type="button" class="btn btn-success align-self-center ml-2">Adicionar
+                    <button id="adcCarrinho" type="button" routerLink="/carrinho" class="btn btn-success align-self-center ml-2">Adicionar
                         ao carrinho</button>
                 </div>
             </div>
