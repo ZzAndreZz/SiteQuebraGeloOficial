@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-  ReactiveFormsModule
-} from '@angular/forms';
-// import { ClientesService } from "./clientes.service";
-import { Entrega } from 'src/app/models/Entrega';
+import { FormGroup, FormControl, Validators} from "@angular/forms";
+// import { Entrega } from 'src/app/models/Entrega';
+import { Formulario } from 'src/app/models/Formulario';
 import { Address } from 'src/app/models/Address';
 import { CepService } from 'src/app/services/cep.service';
 
@@ -18,54 +12,64 @@ import { CepService } from 'src/app/services/cep.service';
 })
 export class FormularioComponent implements OnInit {
 
-
   constructor(private cepService: CepService) {
-    this.formEntrega = this.createForm(new Entrega());
+    this.formFormulario = this.createForm(new Formulario());
    }
 
-  address: Address = new Address("","","","","sp","sp")
+  address: Address = new Address("","","","","","")
 
-  formEntrega: FormGroup
 
-  private createForm(entrega: Entrega) {
+  formFormulario: FormGroup
+
+  private createForm(formulario: Formulario) {
     return new FormGroup({
-      cod: new FormControl(entrega.codEntrega),
-      cep: new FormControl(entrega.CEPUsuario),
-      endereco: new FormControl(entrega.enderecoUsuario),
-      nroEndereco: new FormControl(entrega.numeroEndereco),
-      complemento: new FormControl(entrega.complementoEndereco),
-      bairro: new FormControl(entrega.bairro),
-      cidade: new FormControl(entrega.cidade),
-      estado: new FormControl(entrega.estado),
-      nroCartao: new FormControl(entrega.nroCartao),
-      dtaValidade: new FormControl(entrega.dtaValidade),
-      CVV: new FormControl(entrega.CVV),
-      nomeTitular: new FormControl(entrega.nomeTitular),
-      CPFtitular: new FormControl(entrega.CPFtitular)
+      cod: new FormControl(formulario.codFormulario),
+      cep: new FormControl(formulario.CEPUsuario),
+      endereco: new FormControl(formulario.enderecoUsuario),
+      nroEndereco: new FormControl(formulario.numeroEndereco),
+      complemento: new FormControl(formulario.complementoEndereco),
+      bairro: new FormControl(formulario.bairro),
+      cidade: new FormControl(formulario.cidade),
+      estado: new FormControl(formulario.estado),
     })
   }
 
 
-  pegarCEP(){
-    this.cepService.getCep(this.formEntrega.value).subscribe((data) => {
+
+  pegarCep(){
+    this.cepService.getCep(this.formFormulario.value).subscribe((data) => {
       this.address.setEndereco(data.cep, data.logradouro, data.bairro, data.uf, data.localidade)
-      this.formEntrega.controls['endereco'].patchValue(this.address.endereco);
-      this.formEntrega.controls['bairro'].patchValue(this.address.bairro);
-      this.formEntrega.controls['estado'].patchValue(this.address.estado);
-      this.formEntrega.controls['cidade'].patchValue(this.address.cidade);
+      this.formFormulario.controls['endereco'].patchValue(this.address.endereco);
+      this.formFormulario.controls['bairro'].patchValue(this.address.bairro);
+      this.formFormulario.controls['estado'].patchValue(this.address.estado);
+      this.formFormulario.controls['cidade'].patchValue(this.address.cidade);
     })
   }
 
 
 
-  compraRealizada(){
-    console.log(this.formEntrega.value)
-  }
+  // compraRealizada(){
+  //   console.log(this.formFormulario.value)
+  // }
 
 
-  get cpf() {
-    return this.formEntrega.get('CPFtitular');
+
+
+onSubmit() {
+    // aqui você pode implementar a logica para fazer seu formulário salvar
+    console.log(this.formFormulario);
+    // Usar o método reset para limpar os controlesfna tela
+    this.formFormulario.reset(new  Formulario());
   }
+
+  // onSubmit() {
+  //   aqui você pode implementar a logica para fazer seu formulário salvar
+  //   console.log(this.formCliente.value);
+   
+  //   chamando a função createForm para limpar os campos na tela
+  //   this.createForm(new Cliente());
+  // }
+  
 
 
 

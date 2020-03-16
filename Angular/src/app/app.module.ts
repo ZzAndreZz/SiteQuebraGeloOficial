@@ -3,31 +3,33 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FormularioComponent } from './components/formulario/formulario.component';
+import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
+// import { ResumoCompraComponent } from './components/resumo-compra/resumo-compra.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
-
+// import { CarrinhoComponent } from './components/carrinho/carrinho.component';
+// import { PagamentoComponent } from './components/checkout/pagamento/pagamento.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    NavComponent,
+    FooterComponent,
+    // ResumoCompraComponent,
     FormularioComponent,
-    FooterComponent
-
+    // CarrinhoComponent,
+    // PagamentoComponent
   ],
   imports: [
-
     BrowserModule,
-    HttpClientModule,
+    AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule
-    // ReactiveFormsModule
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

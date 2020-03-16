@@ -1,11 +1,33 @@
-#btnfinalizarcadastro {
-    margin-top: 40px;
-    margin-bottom: 30x;
-    align-items: flex-end;
-    flex: auto;
-    
+.paginaCheckout{
+    margin-top: 100px;
+    margin-bottom: 80px;
 }
 
-#container {
-    margin-top: 40px;
-  }
+.tituloEntrega {
+    font-size: larger;
+    color: #4d85fe;
+    align-items: center;
+}
+
+
+.tituloFrete{
+    font-size: large;
+    font-weight: bold;
+    color: #0f2961;
+    display: flex;
+    justify-content: center;
+}
+
+.tituloPagamento{
+    font-size: larger;
+    color: #4d85fe;
+    align-items: center;
+    font-weight: bold;
+
+}
+
+
+/* label:hover{
+    color: rgba(26, 26, 26, 0.219);
+    
+} */
