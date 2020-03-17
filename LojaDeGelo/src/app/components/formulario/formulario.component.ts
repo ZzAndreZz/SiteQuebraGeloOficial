@@ -1,16 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormBuilder,
-  Validators,
-  FormControl,
-  ReactiveFormsModule
-} from '@angular/forms';
+import { FormGroup, FormControl, Validators} from "@angular/forms";
+// import { Entrega } from 'src/app/models/Entrega';
+import { Formulario } from 'src/app/models/Formulario';
 import { Address } from 'src/app/models/Address';
 import { CepService } from 'src/app/services/cep.service';
-import { Cadastro } from 'src/app/models/Cadastro';
-// import { NgxViacepService } from '@brunoc/ngx-viacep';
-// import { ClientesService } from "./clientes.service";
 
 @Component({
   selector: 'app-formulario',
@@ -19,129 +12,66 @@ import { Cadastro } from 'src/app/models/Cadastro';
 })
 export class FormularioComponent implements OnInit {
 
-  formCadastro: FormGroup;
+  constructor(private cepService: CepService) {
+    this.formFormulario = this.createForm(new Formulario());
+   }
 
   address: Address = new Address("","","","","","")
-  // clientes: string[] = [];
 
-  // clienteService: ClientesService;
 
-  //  formCadastro;
-  constructor(private cepService: CepService) {
-    this.formCadastro = this.createForm(new Cadastro(null,"","",null,"","","","","",null,"","","",""));
-    }
-    // private formBuilder: FormBuilder
-    // this.clienteService = new ClientesService();
+  formFormulario: FormGroup
 
-  private createForm(cadastro: Cadastro){
+  private createForm(formulario: Formulario) {
     return new FormGroup({
-      id: new FormControl(cadastro.idCadastro),
-      name: new FormControl(cadastro.name),
-      cpf: new FormControl(cadastro.cpf),
-      tel: new FormControl(cadastro.tel),
-      email: new FormControl(cadastro.email),
-      senha: new FormControl(cadastro.senha),
-      confirmarSenha: new FormControl(cadastro.confirmarSenha),
-      cep: new FormControl(cadastro.cep),
-      endereco: new FormControl(cadastro.endereco),
-      numeroCasa: new FormControl(cadastro.numeroCasa),
-      complementoCasa: new FormControl(cadastro.complementoCasa),
-      bairro: new FormControl(cadastro.bairro),
-      cidade: new FormControl(cadastro.cidade),
-      estado: new FormControl(cadastro.estado),
-
+      cod: new FormControl(formulario.codFormulario),
+      cep: new FormControl(formulario.CEPUsuario),
+      endereco: new FormControl(formulario.enderecoUsuario),
+      nroEndereco: new FormControl(formulario.numeroEndereco),
+      complemento: new FormControl(formulario.complementoEndereco),
+      bairro: new FormControl(formulario.bairro),
+      cidade: new FormControl(formulario.cidade),
+      estado: new FormControl(formulario.estado)
     })
   }
-  
 
-  pegarCEP(){
-    this.cepService.getCep(this.formCadastro.value).subscribe((data) => {
+
+
+  pegarCep(){
+    this.cepService.getCep(this.formFormulario.value).subscribe((data) => {
       this.address.setEndereco(data.cep, data.logradouro, data.bairro, data.uf, data.localidade)
-      this.formCadastro.controls['endereco'].patchValue(this.address.endereco);
-      this.formCadastro.controls['bairro'].patchValue(this.address.bairro);
-      this.formCadastro.controls['estado'].patchValue(this.address.estado);
-      this.formCadastro.controls['cidade'].patchValue(this.address.cidade);
+      this.formFormulario.controls['endereco'].patchValue(this.address.endereco);
+      this.formFormulario.controls['bairro'].patchValue(this.address.bairro);
+      this.formFormulario.controls['estado'].patchValue(this.address.estado);
+      this.formFormulario.controls['cidade'].patchValue(this.address.cidade);
     })
   }
 
-  ngOnInit() {
-    // this.form = this.formBuilder.group({
-    //   name: [null, Validators.required],
-    //   email: [null, [Validators.required, Validators.email]],
-    //   endereco: [null, [Validators.required]],
-    //   tel: [null, [Validators.call]],
-    //   cpf: [null, [Validators.call]],
 
-    // });
+
+  // compraRealizada(){
+  //   console.log(this.formFormulario.value)
+  // }
+
+
+
+
+onSubmit() {
+    // aqui você pode implementar a logica para fazer seu formulário salvar
+    console.log(this.formFormulario);
+    // Usar o método reset para limpar os controlesfna tela
+    this.formFormulario.reset(new  Formulario());
   }
-
-  // isFieldValid(field: string) {
-  //   return !this.form.get(field).valid && this.form.get(field).touched;
-  // }
-
-  // displayFieldCss(field: string) {
-  //   return {
-  //     'has-error': this.isFieldValid(field),
-  //     'has-feedback': this.isFieldValid(field)
-  //   };
-  // }
 
   // onSubmit() {
-  //   console.log(this.form);
-  //   if (this.form.valid) {
-  //     console.log('form submitted');
-  //   } else {
-  //     this.validateAllFormFields(this.form);
-  //   }
+  //   aqui você pode implementar a logica para fazer seu formulário salvar
+  //   console.log(this.formCliente.value);
+   
+  //   chamando a função createForm para limpar os campos na tela
+  //   this.createForm(new Cliente());
   // }
-
-  // validateAllFormFields(formGroup: FormGroup) {
-  //   Object.keys(formGroup.controls).forEach(field => {
-  //     console.log(field);
-  //     const control = formGroup.get(field);
-  //     if (control instanceof FormControl) {
-  //       control.markAsTouched({ onlySelf: true });
-  //     } else if (control instanceof FormGroup) {
-  //       this.validateAllFormFields(control);
-  //     }
-  //   });
-  // }
-
-  // reset(){
-  //   this.form.reset();
-  // }
-}
+  
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+  ngOnInit(): void {
+}}
