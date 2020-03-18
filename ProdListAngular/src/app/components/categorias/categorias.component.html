@@ -1,0 +1,7 @@
+    <p class="text-muted"><a routerLink="#">Home</a> > <a routerLink="#">Produtos</a></p>
+    <h3 class="bg-primary rounded">Categorias</h3>
+    <ul class="bg-primary rounded">
+        <li *ngFor="let c of categoria">
+            <a routerLink="" (click)="categoriaClicada.emit(c)">{{c.desc}}</a>
+        </li>
+    </ul>
