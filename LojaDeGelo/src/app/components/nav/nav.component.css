@@ -17,6 +17,8 @@
   border:none;
   border-radius:15px;
   width:257px;
+  margin-left: 20px;
+  margin: 0px 20px 0px 0px;
   }
   #txtBusca{
   float:left;
@@ -35,4 +37,7 @@
   }
   #btnBusca:hover{
   opacity: 0.4;
+  }
+  .bem-vindo{
+    font-size: 10px;
   }
